@@ -1,0 +1,390 @@
+The following list is a list of files available with Microsoft Visual Studio 2005 for redistribution under the Visual Studio 2005 license.  If the Microsoft software you have licensed is not Visual Studio 2005, only the files that are installed by the Microsoft software may be redistributed under such license.
+
+_____________________________________________________________
+
+Visual C++ Runtime files
+
+Subject to the license terms for the software, you may redistribute the .EXE files (unmodified) listed below. 
+These files can be run as prerequisites during installation.
+
+vcredist_x86.exe
+
+vcredist_x64.exe	
+
+vcredist_IA64.exe
+
+	
+Subject to the license terms for the software, you may redistribute MSM files listed below unmodified as a part of your installation package:
+	
+Microsoft_VC80_ATL_x86.msm
+
+policy_8_0_Microsoft_VC80_ATL_x86.msm
+
+Microsoft_VC80_ATL_x86_ia64.msm
+
+policy_8_0_Microsoft_VC80_ATL_x86_ia64.msm
+
+Microsoft_VC80_ATL_x86_x64.msm
+
+policy_8_0_Microsoft_VC80_ATL_x86_x64.msm
+
+Microsoft_VC80_CRT_x86.msm
+
+policy_8_0_Microsoft_VC80_CRT_x86.msm
+
+Microsoft_VC80_CRT_x86_ia64.msm
+   	
+policy_8_0_Microsoft_VC80_CRT_x86_ia64.msm
+   
+Microsoft_VC80_CRT_x86_x64.msm
+  	 
+policy_8_0_Microsoft_VC80_CRT_x86_x64.msm
+  	
+Microsoft_VC80_MFC_x86.msm
+   	
+policy_8_0_Microsoft_VC80_MFC_x86.msm
+  	 
+Microsoft_VC80_MFC_x86_ia64.msm
+  	
+policy_8_0_Microsoft_VC80_MFC_x86_ia64.msm
+
+Microsoft_VC80_MFC_x86_x64.msm
+  	
+policy_8_0_Microsoft_VC80_MFC_x86_x64.msm
+ 	
+Microsoft_VC80_MFCLOC_x86.msm
+	 
+policy_8_0_Microsoft_VC80_MFCLOC_x86.msm
+  	
+Microsoft_VC80_MFCLOC_x86_ia64.msm
+	
+policy_8_0_Microsoft_VC80_MFCLOC_x86_ia64.msm
+	
+Microsoft_VC80_MFCLOC_x86_x64.msm
+	
+policy_8_0_Microsoft_VC80_MFCLOC_x86_x64.msm
+
+Microsoft_VC80_OpenMP_x86.msm
+	
+policy_8_0_Microsoft_VC80_OpenMP_x86.msm
+     	
+Microsoft_VC80_OpenMP_x86_ia64.msm
+   	   	
+policy_8_0_Microsoft_VC80_OpenMP_x86_ia64.msm
+   	
+Microsoft_VC80_OpenMP_x86_x64.msm
+  	 
+policy_8_0_Microsoft_VC80_OpenMP_x86_x64.msm
+   	
+
+For your convenience, we have provided the following folders for use when redistributing VC++ runtime files. Subject to the license terms for the software, you may redistribute the folder (unmodified) in the application local folder as a sub-folder with no change to the folder name. You may also redistribute all the files (*.dll and *.manifest) within a folder, listed below the folder for your convenience, as an entire set. 
+
+\VC\redist\x86\Microsoft.VC80.ATL\
+	atl80.dll
+	Microsoft.VC80.ATL.manifest
+
+\VC\redist\ia64\Microsoft.VC80.ATL\
+	atl80.dll
+	Microsoft.VC80.ATL.manifest
+
+\VC\redist\amd64\Microsoft.VC80.ATL\
+	atl80.dll
+	Microsoft.VC80.ATL.manifest
+
+\VC\redist\x86\Microsoft.VC80.CRT\
+	msvcm80.dll
+	msvcp80.dll
+	msvcr80.dll
+	Microsoft.VC80.CRT.manifest
+
+\VC\redist\ia64\Microsoft.VC80.CRT\
+	msvcm80.dll
+	msvcp80.dll
+	msvcr80.dll
+	Microsoft.VC80.CRT.manifest
+
+\VC\redist\amd64\Microsoft.VC80.CRT\
+	msvcm80.dll
+	msvcp80.dll
+	msvcr80.dll
+	Microsoft.VC80.CRT.manifest
+
+\VC\redist\x86\Microsoft.VC80.MFC\
+	mfc80.dll
+	mfc80u.dll
+	mfcm80.dll
+	mfcm80u.dll
+	Microsoft.VC80.MFC.manifest
+
+\VC\redist\ia64\Microsoft.VC80.MFC\
+	mfc80.dll
+	mfc80u.dll
+	mfcm80.dll
+	mfcm80u.dll
+	Microsoft.VC80.MFC.manifest
+
+\VC\redist\amd64\Microsoft.VC80.MFC\
+	mfc80.dll
+	mfc80u.dll
+	mfcm80.dll
+	mfcm80u.dll
+	Microsoft.VC80.MFC.manifest
+
+\VC\redist\x86\Microsoft.VC80.MFCLOC\
+	mfc80chs.dll
+	mfc80cht.dll
+	mfc80enu.dll
+	mfc80esp.dll
+	mfc80deu.dll
+	mfc80fra.dll
+	mfc80ita.dll
+	mfc80jpn.dll
+	mfc80kor.dll
+	Microsoft.VC80.MFCLOC.manifest
+
+\VC\redist\ia64\Microsoft.VC80.MFCLOC\
+	mfc80chs.dll
+	mfc80cht.dll
+	mfc80enu.dll
+	mfc80esp.dll
+	mfc80deu.dll
+	mfc80fra.dll
+	mfc80ita.dll
+	mfc80jpn.dll
+	mfc80kor.dll
+	Microsoft.VC80.MFCLOC.manifest
+
+\VC\redist\amd64\Microsoft.VC80.MFCLOC\
+	mfc80chs.dll
+	mfc80cht.dll
+	mfc80enu.dll
+	mfc80esp.dll
+	mfc80deu.dll
+	mfc80fra.dll
+	mfc80ita.dll
+	mfc80jpn.dll
+	mfc80kor.dll
+	Microsoft.VC80.MFCLOC.manifest
+
+\VC\redist\x86\Microsoft.VC80.OpenMP\
+	vcomp.dll
+	Microsoft.VC80.OpenMP.manifest
+
+\VC\redist\amd64\Microsoft.VC80.OpenMP\
+	vcomp.dll
+	Microsoft.VC80.OpenMP.manifest
+
+\VC\redist\ia64\Microsoft.VC80.OpenMP\
+	vcomp.dll
+	Microsoft.VC80.OpenMP.manifest
+
+Subject to the license terms for the software, the following files can be redistributed with your application in your application local folder or by deploying into the Global Assembly Cache (GAC):
+
+mfcmifc80.dll
+
+Subject to the license terms of the software, one or more of the *.*.pdb files listed below may be redistributed for the sole purpose of debugging your applications. 
+
+atl80.i386.pdb						
+atl80.AMD64.pdb						
+atl80.IA64.pdb						
+						
+msvcm80.i386.pdb						
+msvcm80.AMD64.pdb						
+msvcm80.IA64.pdb						
+						
+msvcp80.i386.pdb						
+msvcp80.AMD64.pdb						
+msvcp80.IA64.pdb						
+						
+msvcr80.i386.pdb						
+msvcr80.AMD64.pdb						
+msvcr80.IA64.pdb						
+						
+mfc80.i386.pdb						
+mfc80.AMD64.pdb						
+mfc80.IA64.pdb						
+						
+mfc80u.i386.pdb						
+mfc80u.AMD64.pdb						
+mfc80u.IA64.pdb						
+						
+mfcm80.i386.pdb						
+mfcm80.AMD64.pdb						
+mfcm80.IA64.pdb						
+						
+mfcm80u.i386.pdb						
+mfcm80u.AMD64.pdb						
+mfcm80u.IA64.pdb
+
+vcomp.i386.pdb
+vcomp.AMD64.pdb
+vcomp.IA64.pdb
+						
+_____________________________________________________________
+
+Smart Device Extensions Files
+
+Subject to the license terms for the software, the following files may be distributed, however, these files are intended only for use with Windows Mobile and Windows CE based devices and may only be distributed with Smart device applications:  
+
+msvcr80.dll
+atl80.dll
+MFC80CHS.DLL
+MFC80CHT.DLL
+MFC80DEU.DLL
+MFC80ENU.DLL
+MFC80ESP.DLL
+MFC80FRA.DLL
+MFC80ITA.DLL
+MFC80JPN.DLL
+MFC80KOR.DLL
+MFC80U.DLL
+
+_____________________________________________________________
+
+.NET Framework 
+
+Subject to the license terms for the software, the following .EXE files may be distributed unmodified:
+
+dotnetfx.exe (X86)
+Netfx64.exe (X64)
+Netfx64.exe (IA64)
+
+langpack.exe (multiple language versions)
+_____________________________________________________________
+Subject to the license terms for the software, the following MSI file may be distributed unmodified:
+
+Wmirdist.msi       
+
+_____________________________________________________________
+
+.NET Compact Framework Files
+
+For your convenience, we have provided the following installation package (*.MSI) for use when redistributing the .NET Compact Framework dlls. Subject to the license terms for the software, you may redistribute the MSI (unmodified) or one or more of the separate files listed below:
+
+.NET Compact Framework V1:
+
+NETCFSetupv1.msi
+	NETCFv1.WCE.ARMV4.CAB
+	NETCFv1.WM.ARMV4I.CAB
+	System_SR_ENU.cab
+	System_SR_JA.cab
+	System_SR_FR.cab 
+	System_SR_DE.cab 
+	System_SR_ES.cab 
+	System_SR_IT.cab 
+	System_SR_CHS.cab
+	System_SR_CHT.cab
+	System_SR_KO.cab
+	System_SR_ENU_wm.cab
+	System_SR_JA_wm.cab
+	System_SR_FR_wm.cab
+	System_SR_DE_wm.cab
+	System_SR_ES_wm.cab
+	System_SR_IT_wm.cab
+	System_SR_CHS_wm.cab
+	System_SR_CHT_wm.cab
+	System_SR_KO_wm.cab
+
+For your convenience, we have provided the following installation package (*.MSI) for use when redistributing the .NET Compact Framework dlls. Subject to the license terms for the software, you may redistribute the MSI (unmodified) or one or more of the separate files listed below:
+
+.NET Compact Framework V2:
+
+NETCFSetupv2.msi
+	NETCFv2.ppc.armv4.cab
+	NETCFv2.wm.armv4i.cab
+	NETCFv2.wce5.sh4.cab
+	NETCFv2.wce5.mipsii.cab
+	NETCFv2.wce5.mipsiv.cab
+	NETCFv2.wce5.armv4i.cab
+	NETCFv2.wce5.x86.cab
+	System_SR_CHS.CAB
+	System_SR_CHS_wm.cab
+	System_SR_CHT.CAB
+	System_SR_CHT_wm.cab
+	System_SR_DE.CAB
+	System_SR_DE_wm.cab
+	System_SR_ENU.CAB
+	System_SR_ENU_wm.cab
+	System_SR_ES.CAB
+	System_SR_ES_wm.cab
+	System_SR_FR.CAB
+	System_SR_FR_wm.cab
+	System_SR_IT.CAB
+	System_SR_IT_wm.cab
+	System_SR_JA.CAB
+	System_SR_JA_wm.cab
+	System_SR_KO.CAB
+	System_SR_KO_wm.cab
+	System_SR_pt-BR.CAB
+	System_SR_pt-BR_wm.cab
+_____________________________________________________________
+
+SQL Server Express Files
+
+Subject to the license terms for the software, the following .EXE files may be distributed unmodified:
+
+SQLExpr.exe
+SQLExpr32.exe
+
+_____________________________________________________
+
+Runtime Components
+
+Subject to the license terms for the software, the following files may be distributed unmodified:
+
+MDAC 2.8 SP1 (MDAC_typ.exe)
+Windows Installer 2.0 (InstMSIA.exe/InstMSIW.exe)   
+Windows Installer 3.1 (WindowsInstaller-KB893803-v2-x86.exe)
+msstdfmt.dll
+vs_piaredist.exe 
+
+_____________________________________________________
+
+Images
+
+One or more of the files located in the .zip file below may be distributed subject to the license terms for the software and the additional use terms described in the .zip file. 
+
+VisualStudio2005ImageLibrary.zip
+
+_____________________________________________________
+
+Visual Studio Tools for Office Files
+
+Subject to the license terms for the software, the following .EXE files may be distributed unmodified:
+
+vstor.exe
+vstolp20.exe 
+
+
+_____________________________________________________
+
+.NET Framework SDK files
+
+Subject to the license terms for the software, the following .EXE files may be distributed unmodified:
+
+MageUI.exe
+Mage.exe
+Makecert.exe
+
+_____________________________________________________________
+
+Report Viewer files
+
+Subject to the license terms for the software, the following .EXE files may be distributed unmodified:
+
+ReportViewer.exe
+ReportViewer-lp.exe
+_____________________________________________________
+
+Microsoft Visual J# .NET Files
+
+Subject to the license terms for the software, the following .EXE files may be distributed unmodified:
+
+vjredist.exe
+vjredist-lp.exe
+
+
+Microsoft Visual J# .NET is a development tool that developers who are familiar with the Java-language syntax can use to build applications and services on the .NET Framework. It integrates the Java-language syntax into the Visual Studio .NET shell. Microsoft Visual J# .NET also supports the functionality found in VJ++ 6.0 including Microsoft extensions. Microsoft Visual J# .NET is not a tool for developing applications intended to run on a Java Virtual Machine. Applications and services built with Visual J# will run only on the .NET Framework. Visual J# has been independently developed by Microsoft. It is not endorsed or approved by Sun Microsystems, Inc.
+
+
+

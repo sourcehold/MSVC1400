@@ -1,0 +1,26 @@
+@if "%VSINSTALLDIR%"=="" goto error_no_VSINSTALLDIR
+@if "%VCINSTALLDIR%"=="" goto error_no_VCINSTALLDIR
+
+@echo Setting environment for using Microsoft Visual Studio 2005 x86 tools.
+
+@rem
+@rem Root of Visual Studio IDE installed files.
+@rem
+@set DevEnvDir=%VSINSTALLDIR%\Common7\IDE
+
+@set PATH=%DevEnvDir%;%VCINSTALLDIR%\BIN;%VSINSTALLDIR%\Common7\Tools;%VSINSTALLDIR%\Common7\Tools\bin;%VCINSTALLDIR%\PlatformSDK\bin;%FrameworkSDKDir%\bin;%FrameworkDir%\%FrameworkVersion%;%VCINSTALLDIR%\VCPackages;%PATH%
+@set INCLUDE=%VCINSTALLDIR%\ATLMFC\INCLUDE;%VCINSTALLDIR%\INCLUDE;%VCINSTALLDIR%\PlatformSDK\include;%FrameworkSDKDir%\include;%INCLUDE%
+@set LIB=%VCINSTALLDIR%\ATLMFC\LIB;%VCINSTALLDIR%\LIB;%VCINSTALLDIR%\PlatformSDK\lib;%FrameworkSDKDir%\lib;%LIB%
+@set LIBPATH=%FrameworkDir%\%FrameworkVersion%;%VCINSTALLDIR%\ATLMFC\LIB
+
+@goto end
+
+:error_no_VSINSTALLDIR
+@echo ERROR: VSINSTALLDIR variable is not set. 
+@goto end
+
+:error_no_VCINSTALLDIR
+@echo ERROR: VCINSTALLDIR variable is not set. 
+@goto end
+
+:end

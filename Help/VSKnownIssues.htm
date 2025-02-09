@@ -1,0 +1,2712 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML dir="ltr" xmlns:o>
+	<HEAD>
+		<Title>Visual Studio 2005 Known Issues</Title>
+		<META http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<STYLE>@import url( readme.htm ); 
+	</STYLE>
+		<META content="MSHTML 6.00.2900.2668" name="GENERATOR">
+	</HEAD>
+	<BODY>
+		<H1><A name="VSALL"></A><FONT face="Arial" size="6">Issues When Using Microsoft Visual 
+				Studio 2005</FONT></H1>
+		<p><FONT face="Arial">This document lists issues you might encounter while using 
+				Microsoft Visual Studio 2005.&nbsp; For issues related to setting up the 
+				product, please refer to readme.htm.</FONT></p>
+		<p><FONT face="Arial">For a list of breaking changes between Beta 2 and RTM, please go 
+				to <a href="http://go.microsoft.com/fwlink/?LinkId=51223 ">http://go.microsoft.com/fwlink/?LinkId=51223
+				</a>
+		</p>
+		<P><FONT face="Arial">For the latest known issues, see the online Visual Studio 
+				2005&nbsp;Known Issues at <A href="http://go.microsoft.com/fwlink/?LinkId=51326">http://go.microsoft.com/fwlink/?LinkId=51326</A>
+			</FONT>
+		</P>
+		</FONT>
+		<P><FONT face="Arial" size="5">1. Visual Studio </FONT>
+		</P>
+		<H3><FONT face="Arial">1.1&nbsp;&nbsp;&nbsp;VC++ Visual Studio 2005 Beta 2 Project File 
+				fails to open&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--528645--><P class="MsoNormal"><FONT face="Arial">When you 
+					use the final version of Visual Studio 2005 to open a Beta 2 C++ project that 
+					was last loaded on a computer with an installation location for Visual Studio 
+					that is different from that on the current computer, or if the project paths 
+					have changed, you might receive an error. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Edit the project settings file. Right-click on the grayed-out 
+					project node in the solution explorer and select “Edit 
+					&lt;projectname&gt;.vcproj”, which will bring up the file in the XML editor. 
+					Change the value of the InheritedPropertySheets tag to 
+					“$(VCInstallDir)VCProjectDefaults\UpgradeFromVC70.vsprops”, and then reload the 
+					project.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.2&nbsp;&nbsp;&nbsp;On Windows 2000, using Start with 
+				Application Verifier&nbsp;produces the message: "Application Verifier is not 
+				supported on the Operating System running on <i>machine_name</i>. Please 
+				upgrade to Windows XP or above."&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--544465--><P class="MsoNormal"><FONT face="Arial"> Windows 
+					2000 does not support the Application Verifier. </FONT>
+			</P>
+			<P class="MsoNormal"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			</P>
+			<P><FONT face="Arial">Upgrade to Windows XP or above.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.3&nbsp;&nbsp;&nbsp;Start with Application Verifier generates 
+				the dialog box: "Application Verifier requires an updated system file that is 
+				not detected on your machine <I>machine_name</I>. Do you want to go to Windows 
+				download center to get the update?"&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1">
+			<DIV class="indent" id="DIV1"><!--548808-->
+				<P class="MsoNormal"><FONT face="Arial">Visual Studio setup does not install a system 
+						file that is required by Application Verifier.&nbsp; If the required version of 
+						the file is not present on your computer's operating system, you must update it 
+						before you can use Application Verifier.</FONT></P>
+				<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+				<P><FONT face="Arial"> Select 'Yes' on the dialog to open the internet browser and show 
+						the update link on the Microsoft download center site. Install the required 
+						update. You also can access the Microsoft download center using this link:<BR>
+						<A href="http://go.microsoft.com/fwlink/?LinkId=49500">http://go.microsoft.com/fwlink/?LinkId=49500</A><BR>
+					</FONT>
+				</P>
+			</DIV>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.4&nbsp;&nbsp;&nbsp;Toolbox in Distributed System Designers 
+				does not reflect the local Windows language setting until Toolbox is 
+				reset.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--542442--><P class="MsoNormal"><FONT face="Arial">In the 
+					Options dialog box, users can set Visual Studio to use the local Windows 
+					language. &nbsp;However, the Toolbox in Distributed System Designers does not 
+					reflect this setting until the Toolbox is reset.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">1) Close all Distributed System Designers (Application Designer, 
+					System Designer, Logical Datacenter Designer, and Deployment Designer).<br>
+					2) Right-click inside the Toolbox and then click Reset Toolbox.<br>
+					3) Reopen the Distributed System Designers you want to use.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.5&nbsp;&nbsp;&nbsp;Remote Debugging on Windows 98 and Windows 
+				Me &nbsp;</FONT></H3> <!--543664--><P class="MsoNormal"><FONT face="Arial"><h3 class="indent">Problem 
+					1:</h3>
+				<DIV class="indent">
+					<br>
+					If using Visual Studio 2005 to remote debug with default transport to a Windows 
+					98 or Windows ME computer that is part of a domain with a Windows Server 
+					2003-based Domain Controller, the user may see the following error message 
+					approximately 10 minutes after starting the Windows 98/ME computer:</DIV>
+				<DIV class="indent">
+					<br>
+					-------------------------<br>
+					Microsoft Visual Studio<br>
+					-------------------------<br>
+					Unable to connect to the Microsoft Visual Studio Remote Debugging Monitor named 
+					'&lt;machinename&gt;'. Access is denied.
+					<br>
+					<br>
+					Cause: Server Message Block (SMB) signing is both enabled and required on 
+					Windows Server 2003-based Domain Controllers.<br>
+					<br>
+				</DIV>
+				<h3 class="indent">Problem 2:</h3>
+				<DIV class="indent">
+					<br>
+					If using Visual Studio 2005 on a Windows XP or later computer to remote debug 
+					to a Windows 98 or Windows ME computer, the user may see the following error 
+					message.</DIV>
+				<DIV class="indent">
+					<br>
+					-------------------------<br>
+					Microsoft Visual Studio<br>
+					-------------------------<br>
+					Unable to connect to the Microsoft Visual Studio Remote Debugging Monitor named 
+					'<qualifier_name>'.  The Microsoft Visual Studio Remote Debugging Monitor on the remote computer cannot connect to the local computer. Unable to initiate DCOM communication. Please see Help for assistance.<br><br>Cause: "Remote Access for Anonymous Logon in DCOM" is disabled on the computer running Visual Studio 2005.<br></DIV>
+			</FONT>
+		<P class="indent"></P>
+		<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+		<P class="indent"><FONT face="Arial"><h3 class="indent">Problem 1:</h3>
+				<DIV class="indent">
+					<br>
+					1) Set the Domain Controller policy such that SMB signing is enabled but not 
+					required.
+					<br>
+					For information on how to do the same go to <a href="http://support.microsoft.com/?kbid=887429">
+						http://support.microsoft.com/?kbid=887429</a><br>
+					2) Restart the Domain Controller<br>
+					3) Restart the computer where Visual Studio 2005 is installed.<br>
+					4) Restart the computer running Windows 98/ME
+					<br>
+					<br>
+				</DIV>
+				<h3 class="indent">Problem 2:</h3>
+				<DIV class="indent">
+					<br>
+					To allow "Remote Access for Anonymous Logon in DCOM" on the computer running 
+					Visual Studio 2005, follow these instructions:<br>
+					1) At a command prompt, type dcomcnfg, and then press ENTER. Component Services 
+					opens.
+					<br>
+					2) In Component Services, expand Component Services, expand Computers, and then 
+					expand My Computer.
+					<br>
+					3) On the toolbar, click the Configure My Computer button. The My Computer 
+					dialog box appears.
+					<br>
+					4) In the My Computer dialog box, click the COM Security tab.
+					<br>
+					5) Under Access Permission, click Edit Limits. The Access Permission dialog box 
+					appears.
+					<br>
+					6) Under Group or user names, click ANONYMOUS LOGON.
+					<br>
+					7) Under Permissions for ANONYMOUS LOGON, select the Remote Access check box, 
+					and then click OK.<br>
+				8) Restart the computer.</FONT>
+		</DIV>
+		<P class="indent"></P>
+		<P class="indent">&nbsp;</P>
+		<H3><FONT face="Arial"> 1.6&nbsp;&nbsp;&nbsp;Pressing F1 on a Web service provider 
+				endpoint results in "Information Not Found".&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--544228--><P class="MsoNormal"><FONT face="Arial">When you 
+					press F1 while a Web service provider endpoint is selected on an application 
+					diagram, a relevant Help topic cannot be found.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">In Help, search for "How to: Define Operations for ASP.NET Web 
+					Services".</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.7&nbsp;&nbsp;&nbsp;Users should not store sensitive 
+				information in custom settings or in settings not defined as secure settings by 
+				SDM documents.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--545039--><P class="MsoNormal"><FONT face="Arial">Sensitive 
+					information stored in custom settings or in settings not defined as secure 
+					settings by SDM documents (such as .sdm and .ad files) will appear as plain 
+					text in these files.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">When using the Settings and Constraints Editor, store sensitive 
+					information only settings that are designated as secure settings in SDM 
+					documents. For more information, see "How to: Create Custom Settings for 
+					Applications, Servers, Endpoints, and Zones" and "Considerations for 
+					Implementing Applications" in Help.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.8&nbsp;&nbsp;&nbsp;Starting the Itanium (IA64) native tools 
+				command prompt &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--545638--><P class="MsoNormal"><FONT face="Arial">When 
+					installing the tools on Itanium (IA64), a shortcut for starting the Itanium 
+					(IA64) native tools command prompt is not created.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">The Itanium (IA64) native tools command prompt can be started by 
+					doing the following:<br>
+					1) Go to <b>Start</b>, click <b>Run</b><br>
+					2) Type <b>cmd</b><br>
+					3)&nbsp;At the command prompt, type &lt;Your Visual Studio 2005 installation 
+					directory&gt;\VC\bin\vcvars64.bat</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.9&nbsp;&nbsp;&nbsp;Profiling and running instrumented modules 
+				from network shares is not supported&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548036--><P class="MsoNormal"><FONT face="Arial">Under 
+					default Visual Studio settings, running an instrumented binary from a network 
+					share results in an unhandled exception.</FONT></P>
+			<P class="MsoNormal"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			</P>
+			<P><FONT face="Arial">Copy or move the project or binary you wish to profile to your 
+					local hard drive.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.10&nbsp;&nbsp;&nbsp; Using Event Tracing for Windows (ETW) to 
+				collect event profiling data for IIS5.1 is not supported&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548049--><P class="MsoNormal"><FONT face="Arial">Trace 
+					profiling an application that targets IIS5.1 and enabling the collection of ETW 
+					events will silently fail in the UI and report an erroneous Error VSP1432 on 
+					the command line.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.11&nbsp;&nbsp;&nbsp;IA64 profiling is not supported&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548058--><P class="MsoNormal"><FONT face="Arial">IA64 
+					profiling is no longer supported.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial"> 1.12&nbsp;&nbsp;&nbsp;Stand-alone profiler&nbsp;does not 
+				support code coverage&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548070--><P class="MsoNormal"><FONT face="Arial">When you 
+					try to run code coverage on a stand-alone profiler&nbsp;installation, you will 
+					see an unhandled exception.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.13&nbsp;&nbsp;&nbsp;Running code coverage against an ASP.NET 
+				application may leave web.config in an altered state.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548077--><P class="MsoNormal"><FONT face="Arial">When 
+					running unit tests against an ASP.NET project, the test engine needs to modify 
+					the web.config files. Sometimes these files are not cleaned up and can cause 
+					exceptions in subsequent test runs and application runs.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Restore the original web.config file from the backup that was 
+					created during the test run.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.14&nbsp;&nbsp;&nbsp;Support for ReportViewer Control is 
+				limited on Windows 98&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548203--><P class="MsoNormal"><FONT face="Arial">The 
+					Windows Forms ReportViewer control has limited support when used in 
+					applications running on Windows98. With this control, you can only view reports 
+					previously published on a SQL Server 2005 Reporting Services report server. You 
+					cannot use it to view client report definition (.rdlc) files in local 
+					processing mode. </FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.15&nbsp;&nbsp;&nbsp;Code coverage for ASP.NET will not work if 
+				the IIS worker process is running as SYSTEM&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548422--><P class="MsoNormal"><FONT face="Arial"> Collecting 
+					code coverage data for ASP.NET will not work if the IIS worker process is 
+					running as SYSTEM.&nbsp; Check MSDN for the name of the IIS worker process on 
+					your system because the name is different for different versions of IIS. You 
+					can use Task Manager to determine what user the worker process is running 
+					under.<br>
+					Note: The unit tests will run correctly if code coverage is disabled.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Change the IIS worker process not to run as SYSTEM.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.16&nbsp;&nbsp;&nbsp;Trying to profile an 
+				ASP.NET&nbsp;application with forms authentication enabled&nbsp;results in an 
+				error</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548423--><P class="MsoNormal"><FONT face="Arial">If you 
+					try to profile an ASP.NET application with forms authentication enabled, you 
+					will get a web site configuration error and the application will not run.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There is no known resolution.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.17&nbsp;&nbsp;&nbsp;Performing actions on Distributed System 
+				Designer diagrams while code is running will cause Visual Studio to stop 
+				responding.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548655--><P class="MsoNormal"><FONT face="Arial">For 
+					example, adding applications to a system diagram in System Designer while the 
+					Debugger is running will cause Visual Studio to stop responding. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Do not run code performing actions on Distributed System Designer 
+					diagrams.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.18&nbsp;&nbsp;&nbsp;Trace profiling a shared dll will profile 
+				all processes using that dll&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548063--><P class="MsoNormal"><FONT face="Arial">If you 
+					have a shared dll and want to trace profile it, you might end up profiling all 
+					processes that are using it.</FONT></P>
+			<P class="MsoNormal"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			</P>
+			<P><FONT face="Arial">1) Turn off profiling on each process you do not want to profile 
+					using vsperfcmd -proccessoff:PID.<br>
+					2) Set HKCU/software/microsoft/visual 
+					studio/8.0/VSPERF/Monitor/Settings/ProcessProfile=Off, start your target 
+					processes, and then enable profiling on all processes you want to profile using 
+					vsperfcmd -processon:PID<br>
+					Note: When you have finished profiling, you must&nbsp;shut down all processes 
+					that are using the shared dll in order to shut down the monitor and flush the 
+					data to the report file.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.19&nbsp;&nbsp;&nbsp;How to trace profile Natively Generated 
+				(ngen'd) images&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548067--><P class="MsoNormal"><FONT face="Arial">Trying 
+					to instrument an ngen'd image will report an erroneous VSP1014 error.<br>
+					The CLR will not load an instrumented managed binary that has already been 
+					ngen'd.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Once you have instrumented the managed binary itself and not the 
+					ngen'd image, you must do one of the following:</FONT></P>
+			<P><FONT face="Arial"> 1) Delete the ngen'd image so that the CLR uses the instrumented 
+					binary<br>
+					-or-<br>
+					2) Regenerate the binary using ngen.exe.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.20&nbsp;&nbsp;&nbsp;Crash if the MarkProfile profiling APIs 
+				are used and the profiler monitor is not running</FONT><!--548416--></H3>
+		<DIV class="indent" id="DIV1"><P class="MsoNormal"><FONT face="Arial">When using 
+					MarkProfile, CommentMarkProfile, or CommentMarkAtProfile that are available 
+					from vsperf.h, you will see an application crash if the profiler monitor is not 
+					running. This will be most noticeable if you add the API calls and then launch 
+					them under the debugger instead of the profiler.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Start the profiler monitor using "vsperfcmd -start:sample 
+					-output:foo.vsp"</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.21&nbsp;&nbsp;&nbsp;Web projects: Types defined in a GAC'ed 
+				assembly cannot be visualized in class diagrams&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548850--><P class="MsoNormal"><FONT face="Arial"> Class 
+					diagrams cannot show types in a referenced assembly if all the following 
+					conditions are true:<br>
+					1. Class diagram resides in a web project.<br>
+					2. The referenced assembly is installed under the Global Assembly Cache (GAC)<br>
+					3. The referenced assembly is not installed under the framework directory root 
+					("Microsoft.Net\Framework\&lt;Version&gt;\"). </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Visualize the referenced type from a non-web project.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.22&nbsp;&nbsp;&nbsp;Instrumented managed dll fails to load 
+				into a website project&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548042--><P class="MsoNormal"><FONT face="Arial">An 
+					instrumented managed user control hosted in a website will fail to load with 
+					the default security settings for .NET.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">You must enable Full Trust for the local website to be able to 
+					load the instrumented dll.<br>
+					caspol.exe -ag 1.2 -url http://localhost FullTrust</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.23&nbsp;&nbsp;&nbsp;Application Verifier is not enabled for 
+				mixed mode C++ projects. Instead it will produce the following dialog box:<br>
+				"Application Verifier is not supported for the selected debug mode. Please see 
+				supporting documentation for more information. Click on OK to continue 
+				debugging without verifier"&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548996--><P class="MsoNormal"><FONT face="Arial"> Application 
+					Verifier is not enabled for mixed mode applications even though you can select 
+					it from the Debug menu.</FONT></P>
+			<P class="MsoNormal"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			</P>
+			<P><FONT face="Arial"> Continue debugging without Application Verifier.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.24&nbsp;&nbsp;&nbsp;Profiler driver is not being initialized 
+				correctly on Windows 2000</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548429--><P class="MsoNormal"><FONT face="Arial">The 
+					first time the profiler driver is used, it needs to initialize itself. If this 
+					initialization happens on Windows 2000 Server via remote desktop session, the 
+					driver will be initialized for future sessions but not for the current 
+					one.&nbsp; If you try to start the monitor on the current session, you will see 
+					Error VSP1398 and the monitor will fail to start.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"> Do one of these:</FONT></P>
+			<P><FONT face="Arial"> 1) Restart the computer.<br>
+					-or-</FONT></P>
+			<P><FONT face="Arial">2) Use remote desktop to connect to a different session on the 
+					same computer.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.25&nbsp;&nbsp;&nbsp;Test runs window: Users in "Controller 
+				users" group and not in "Admin users" are not able to connect to controller 
+				&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--549711--><P class="MsoNormal"><FONT face="Arial">When a 
+					user is added to the "Controller users" group and not to the "Controller admin" 
+					group the change does not take affect until the controller service is 
+					restarted. As a result, the user cannot connect to the controller.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Restart the controller service.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.26&nbsp;&nbsp;&nbsp;Encoding changes might not appear when a 
+				file is reloaded in the editor.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550380--><P class="MsoNormal"><FONT face="Arial">Visual 
+					Studio 2005 does not detect changes in encoding when a file is reloaded. If you 
+					have changed the encoding of a file outside of the current editor, or performed 
+					a source control operation that changed the encoding of a file open in the 
+					editor, Visual Studio reloads the file automatically. The contents of the file 
+					might display incorrectly after it has been reloaded in the editor.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"><ol>
+						<br>
+						<li>
+							Close the file without saving the changes.<br>
+						<li>
+							On the <b>File</b> menu, choose <b>Open</b> and then select <b>File</b>.<br>
+						<li>
+							In the <b>Open File</b> dialog box, click the arrow adjacent to the <b>Open</b> 
+							button and click <b>Open With</b>.<br>
+						<li>
+							From the list in the <b>Open With</b> dialog box, select the editor into which 
+							you want to open the file, such as the Binary or Resource editor. To open the 
+							file with a particular encoding, select an editor with encoding support, such 
+							as XML Editor with Encoding.<br>
+						<li>
+							Click <b>OK</b>.<br>
+						<li>
+							In the <b>Encoding</b> dialog box, select the correct encoding from the <b>Encoding</b>
+							drop-down list.<br>
+						<li>
+							Click <b>OK</b>.<br>
+						</li>
+					</ol>
+				</FONT>
+			<P></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.27&nbsp;&nbsp;&nbsp;Product repair occurs when installing 
+				Setup project&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550727--><P class="MsoNormal"><FONT face="Arial">If 
+					Visual Studio 2003 is installed after Visual Studio 2005, then building a Setup 
+					Project from either version of Visual Studio causes product repair to occur. 
+					The product repair only occurs for users other than the one who installed 
+					Visual Studio 2003.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"> When the product repair occurs, allow it to complete. For the 
+					repair to be successful, it must be performed from a user account that did not 
+					perform the installation of Visual Studio 2003 and has admin privileges.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.28&nbsp;&nbsp;&nbsp;Office product fails to run after 
+				installing Visual Studio 2005 Tools for Microsoft Office project&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550728--><P class="MsoNormal"><FONT face="Arial">After 
+					installing a Visual Studio 2005&nbsp;Tools for Microsoft Office add-in project 
+					that contains a Reg-free COM component, the Office product targeted by the 
+					add-in&nbsp;fails to run.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Reg-free COM is not supported for Visual Studio 2005 Tools for 
+					Microsoft Office add-in projects.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.29&nbsp;&nbsp;&nbsp;Setup and Deployment projects imported 
+				from Visual Studio 2003 fail to be signed when built&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550733--><P class="MsoNormal"><FONT face="Arial"> Setup 
+					and Deployment projects imported from Visual Studio 2003 that have signing 
+					enabled will not be signed when built in Visual Studio 2005. The following 
+					message will appear in the Error List window at build time: "The file ' 
+					&lt;filename&gt; ' was not signed. The deployment project contains deprecated 
+					signing properties. See Help for more information."</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">To enable signing, you may invoke the Software Development Kit 
+					tool, Signtool, on the build output from a post-build step in the Setup and 
+					Deployment project. More information on how to do this is available by viewing 
+					the help topic associated with the build message referred to above. You can 
+					access help by highlighting the message in the Error List window and then 
+					pressing F1.</FONT></P>
+			<P><FONT face="Arial">
+					<br>
+					To&nbsp;remove deprecated signing project properties:<br>
+					1. Double-click the message in the Error List window<br>
+					2. In the dialog that appears, click 'Yes.' This will cause the deprecated 
+					signing project properties to be removed from your project file.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial"> 1.30&nbsp;&nbsp;&nbsp;Certain bootstrapper packages available 
+				with Visual Studio 2005 target only 32-bit platform&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550744--><P class="MsoNormal"><FONT face="Arial">The 
+					bootstrapper packages for .NET Framework 2.0, SQL Server Express 2005, 
+					Microsoft Visual J# Redistributable, Windows Installer 2.0, and Windows 
+					Installer 3.1 available with Visual Studio 2005 target only 32-bit platforms. 
+					If a bootstrapper built with these packages is run on a 64-bit platform, the 
+					installation might block.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">The bootstrapper packages for the 64-bit versions of the .NET 
+					Framework 2.0 and SQL Server Express 2005 redistributables will be made 
+					available on the Microsoft download center.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.31&nbsp;&nbsp;&nbsp;User Defined Types as Settings may cause 
+				unexpected behavior in the settings designer&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550651--><P class="MsoNormal"><FONT face="Arial">Using 
+					User-Defined Types as Settings might cause problems if the assembly in which 
+					the UDT resides is updated while the consuming project is open. If this 
+					scenario is required, you can workaround the problem by making the UDT assembly 
+					use incremental version semantics.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"> If the User Defined Type that is being used as a setting resides 
+					in a class library, incrementally version the library to mitigate the problem. 
+					If the User Defined Type resides in an EXE, the IDE must be closed and 
+					restarted for changes to the UDT to take affect.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial"> 1.32&nbsp;&nbsp;&nbsp;No Forms property in "My" inside a User 
+				Control project&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550837--><P class="MsoNormal"><FONT face="Arial">My.Forms 
+					will not be available in a User Control project</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There is no known resolution.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.33&nbsp;&nbsp;&nbsp;Cannot invoke an object's method through 
+				remote debugging if stopped on Sleep&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550838--><P class="MsoNormal"><FONT face="Arial"> If you 
+					have the following code running on a remote computer, then attach to the 
+					running code via remote debugging, and&nbsp;break as execution is inside the 
+					call to Sleep(), you will be unable to evaluate members of the variable c.<br>
+					<br>
+					c = New c1&nbsp;&nbsp;&nbsp;&nbsp; 'assume c1 is a valid class<br>
+					While True<br>
+					Threading.Thread.Sleep(1000)<br>
+					End While</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Step out of the Sleep(), you will then be able to evaluate 
+					objects normally.</FONT></P>
+			<P><FONT face="Arial"></FONT>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.34&nbsp;&nbsp;&nbsp;Visual Studio 2005 Team Edition for 
+				Testers: Load Test Error Table Contains: "Could not Find Dependent Counter 
+				Needed to Apply Threshold Rule"&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550907--><P class="MsoNormal"><FONT face="Arial">The load 
+					test result viewer's Error Table contains an error with the message “Could not 
+					find dependent counter needed to apply threshold rule”. The load test contains 
+					a threshold rule that compares one performance counter with another. This error 
+					is generated if the comparison performance counter does not generate an 
+					instance during a sampling interval.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Change the associated threshold rule to compare against a 
+					constant instead of another performance counter. This does not affect the 
+					results of the load test beyond failing to run the specified threshold rule and 
+					can be safely ignored.<br>
+					<br>
+					Use the following procedure to change the counter:<br>
+					1. Edit the load test and select Counter Sets/Load Test/Counter 
+					Categories/LoadTest:Request/Counters/Avg. Connection Wait Time/Threshold Rules.<br>
+					2. Delete the Compare Counters Rule.
+					<br>
+					3. Right-click to add a Compare Constant rule.<br>
+					4. In the rule, set Alert if Over to true, warning to .01 (10 ms) and critical 
+					threshold to .02 (20 ms).</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.35&nbsp;&nbsp;&nbsp;Visual Studio 2005 Team Edition for 
+				Testers: Web test run fails with the error, “Object not set to an instance of 
+				an object”&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550911--><P class="MsoNormal"><FONT face="Arial">Running 
+					a coded web test with an unused data source fails with the error “Object not 
+					set to an instance of an object”. This occurs because a data source is defined 
+					within a coded web test but it is not bound to any item in the test.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Remove the unused data source from the coded web test or bind a 
+					field from the data source to an item in the test by adding a DataBinding 
+					attribute to the test class.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.36&nbsp;&nbsp;&nbsp;Visual Studio 2005 Team Edition for 
+				Testers: Set the Proxy Property of a SoapHttpClientProtocol Implementations to 
+				Null&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550913--><P class="MsoNormal"><FONT face="Arial">If you 
+					are running a load test containing unit tests that call Web services, the unit 
+					test code should explicitly set the proxy property of the Web service proxy 
+					class that implements System.Web.Services.Protocols.SoapHttpClientProtocol. 
+					This prevents a performance bottleneck that can occur when the proxy must be 
+					automatically detected.<br>
+					<br>
+					For example, if you have a Web service proxy class such as this:<br>
+					<br>
+					[System.Diagnostics.DebuggerStepThroughAttribute()]<br>
+					[System.ComponentModel.DesignerCategoryAttribute("code")]<br>
+					[System.Web.Services.WebServiceBindingAttribute(Name="InstantOrderSoap", 
+					Namespace="http://tempuri.org/")]<br>
+					public partial class InstantOrder : 
+					System.Web.Services.Protocols.SoapHttpClientProtocol {<br>
+					…<br>
+					}<br>
+					<br>
+					then after creating the proxy object, and before using it, explicitly set the 
+					Proxy property:<br>
+					<br>
+					InstantOrder orderCheck = new InstantOrder();<br>
+					orderCheck.Proxy = new WebProxy("myproxy", true);<br>
+				</FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.37&nbsp;&nbsp;&nbsp;Cannot pass a structure to a variant 
+				property in an ActiveX EXE object&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550925--><P class="MsoNormal"><FONT face="Arial">On 
+					Windows 98, you cannot pass a structure to a variant property in an ActiveX EXE 
+					object. The problem is that on a clean Windows 9X computer, the System DLL 
+					rpcrt4.dll was not registered by default, so the operating system is missing 
+					the registration key 
+					[HKEY_CLASSES_ROOT\CLSID\{B5866878-BD99-11D0-B04B-00C04FD91550}]. The 
+					invocation fails because of this missing registration.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"> Go to C:\Windows\System and manually invoke RegSvr32.exe 
+					rpcrt4.dll. </FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial"> 1.38&nbsp;&nbsp;&nbsp;New on a type parameter with cyclic 
+				constraints causes VB compiler to hang and increases memory allocations&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550935--><P class="MsoNormal"><FONT face="Arial">Pasting 
+					the code below in a console application will cause it to hang.<br>
+					<br>
+					Class C1(Of U As U)&nbsp;&nbsp;&nbsp;&nbsp;'the cyclic constraints here cause 
+					the later problem<br>
+					End Class<br>
+					<br>
+					Partial Class C1(Of U)<br>
+					Dim x As New U&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'Issue - this 
+					causes infinite looping and the memory usage keeps increasing till memory is no 
+					longer available<br>
+					<br>
+					End Class</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Remove the cyclic constraint.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.39&nbsp;&nbsp;&nbsp;Parameters to StartupNextInstanceEvent 
+				handler will not contain command line arguments if application is started using 
+				ClickOnce&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550884--><P class="MsoNormal"><FONT face="Arial">Parameters 
+					to StartupNextInstanceEvent handler will not contain the command line arguments 
+					of the second instance of the application if application is started using 
+					ClickOnce. You must use the My.Application.Deployment.ActivationUri property to 
+					get the command line arguments.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Use the ASP runtime classes to get the command-line arguments, as 
+					follows:<br>
+					<br>
+					Imports System.Web<br>
+					<br>
+					Dim commandLineArgs as NameValueCollection = _<br>
+					HttpUtility.ParseQuery(My.Application.Deployment.ActivationUri)</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.40&nbsp;&nbsp;&nbsp;VB compiler doesn't support 
+				InternalsVisibleTo attribute&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550943--><P class="MsoNormal"><FONT face="Arial">&lt;Assembly: 
+					InternalsVisibleTo("Foo.Dll, PublicKeyToken=a29c01bbd4e39ac5")&gt;<br>
+					<br>
+					This attributute (among other things) exposes Friend types to other assemblies. 
+					This attribute is not supported by the VB compiler.<br>
+					<br>
+					Some unit testing technologies that rely on this attribute for testing private 
+					types will not work as expected.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There is no known resolution.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.41&nbsp;&nbsp;&nbsp;Some documentation for vsperfcmd.exe is 
+				missing&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548407-->
+			<P class="MsoNormal"><FONT face="Arial">Documentation of vsperfcmd that describes 
+					common user scenarios is missing.</FONT></P>
+			<P class="MsoNormal"><FONT face="Arial">
+					<br>
+					Here are some examples of common commands that you might use with 
+					vsperfcmd.exe:<br>
+					vsperfcmd -start:sample -output:foo.vsp<br>
+					vsperfcmd -start:trace -output:foo.vsp -counter:g,1,0,InstructionsRetired<br>
+					vsperfcmd -launch:foo.exe -args:"input arguments" -gc:lifetime<br>
+					vsperfcmd -attach:foo.exe -pf:1</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.42&nbsp;&nbsp;&nbsp;My.Log is not available in a VB Web 
+				Control Library project.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550979--><P class="MsoNormal"><FONT face="Arial"> In a VB 
+					Web Control Library project, My.Log is not available.&nbsp; Because My is 
+					per-project, My.Log will be available for WebUserControls inside a Web site 
+					project, but it will not be available for classes within Web Control Library 
+					projects that are consumed by a Website.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Use Trace.Write instead of the My.Log methods.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.43&nbsp;&nbsp;&nbsp;My.Application.Log.WriteEntry may throw an 
+				exception if user does not have File I/O permission.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550965--><P class="MsoNormal"><FONT face="Arial">1) 
+					Create a new Console Application with the following code:<br>
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;My.Application.Log.DefaultFileLogWriter.CustomLocation 
+					= "D:\temp"<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;My.Application.Log.WriteEntry("Foo")<br>
+					<br>
+					2) Run the application<br>
+					<br>
+					RESULTS:<br>
+					Log file is created in D:\temp, but the directory D:\Documents and 
+					Settings\&lt;username&gt;\Application 
+					Data\Microsoft\WindowsApplication1\1.0.0.0 is also created if it does not 
+					exist. In the case that the user does not have permission to do this, an 
+					exception is thrown. This is likely to occur when using a class library in a 
+					Web application, because the ASP.NET process does not have write permission to 
+					any Application Data directory by default.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">1) Remove the default FileLogTraceListener via app.config, and 
+					Reconfigure My.Application.Log to use a different TraceListener.<br>
+					2) Listen to Unhandled Exception event and continue when the event happens.<br>
+					3) Try/catch every logging call (or at least the ones that could conceivably be 
+					the first to execute).</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.44&nbsp;&nbsp;&nbsp;References to 32-bit COM components may 
+				not work in VB and C# Applications running on 64-bit platforms &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551235--><FONT face="Arial">
+				<P class="MsoNormal"><br>
+					Most existing COM components are only available for 32-bit platforms and will 
+					not run in a 64-bit process on a 64-bit platform (although they will run 
+					correctly in a 32-bit process on a 64-bit platform). VB and C# applications 
+					that reference these 32bit COM components will not run by default on a 64-bit 
+					platform because by default the application will launch as a 64-bit process.<br>
+					<br>
+					The problem appears when a project with one or more COM references is:
+					<br>
+					1. Migrated to Visual Studio 2005 and executed on 64-bit platforms
+				</P>
+				<P class="MsoNormal">
+					-or-
+					<br>
+					2. Created using Visual Studio 2005 on 64-bit platforms.<br>
+					<br>
+					In Visual Studio 2005, the VB and C# compilers use the platform target property 
+					to determine if the.exe or .dll should run in 32-bit or 64-bit CPU architecture 
+					mode. The default setting for this property in Visual Studio 2005 is set to 
+					'AnyCPU', which indicates that the application can run in either 32-bit or 
+					64-bit mode, depending on the host platform. In this situation you may see a 
+					message such as "Cannot instantiate class …" when you debug or run these 
+					applications.<br>
+					<br>
+				</P>
+			</FONT>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"> Set the platform target property to 'X86' for your VB or C# 
+					projects that have references to COM components.<br>
+					<br>
+					For C# Projects:<br>
+					1.&nbsp;&nbsp;&nbsp;&nbsp;Right click the project in the solution explorer and 
+					open 'properties'<br>
+					2.&nbsp;&nbsp;&nbsp;&nbsp;Choose the Build tab<br>
+					3.&nbsp;&nbsp;&nbsp;&nbsp;Set the Platform Target property to 'X86'<br>
+					<br>
+					For VB Projects:<br>
+					1.&nbsp;&nbsp;&nbsp;&nbsp;Right click the project in the solution explorer and 
+					open 'properties'<br>
+					2.&nbsp;&nbsp;&nbsp;&nbsp;Choose the Compile tab<br>
+					3.&nbsp;&nbsp;&nbsp;&nbsp;Press the Advanced Compile Options… button<br>
+					4.&nbsp;&nbsp;&nbsp;&nbsp;Set the Target CPU property to 'X86'<br>
+					<br>
+					Express Editions:<br>
+					The VB and C# Express products do not expose the Target property inside the 
+					development environment. You will need to carefully modify the project file 
+					using a text or XML editor.
+					<br>
+					1.&nbsp;&nbsp;&nbsp;&nbsp;Close the project and/or solution<br>
+					2.&nbsp;&nbsp;&nbsp;&nbsp;Select Open File from the File menu<br>
+					3.&nbsp;&nbsp;&nbsp;&nbsp;Navigate to the project directory, and highlight the 
+					project file<br>
+					4.&nbsp;&nbsp;&nbsp;&nbsp;Press the Open button, the project file should open 
+					in the XML editor<br>
+					5.&nbsp;&nbsp;&nbsp;&nbsp;Locate the first &lt;PropertyGroup&gt; section and 
+					add the following line:<br>
+					&lt;PlatformTarget&gt;x86&lt;/PlatformTarget&gt;<br>
+					1.&nbsp;&nbsp;&nbsp;&nbsp;Save the project file<br>
+					2.&nbsp;&nbsp;&nbsp;&nbsp;Reopen the project and/or solution using Open 
+					Project/Solution from the File menu<br>
+					3.&nbsp;&nbsp;&nbsp;&nbsp;Continue with development, debugging, and testing<br>
+					<br>
+					Alternatively, if the application is targeted to 64-bit platforms, you can 
+					ensure that the COM controls added to the application have 64-bit equivalents 
+					on the development and deployment computers.</FONT></P>
+			<P><FONT face="Arial"></FONT>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial"> 1.45&nbsp;&nbsp;&nbsp;Using Windows Roaming Profiles may cause 
+				first time launch message to show on each startup.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551259--><P class="MsoNormal"><FONT face="Arial">When any 
+					one of the Visual Studio family of products is used with Windows Roaming 
+					Profiles, the first time launch message that says "Visual Studio 2005 is 
+					configuring the environment for first time use. This might take a few minutes." 
+					might appear on every session startup. This might cause unnecessary slowdowns 
+					in startup performance.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"> Click on the Tools &gt; Options... Select "Import and Export 
+					Settings", and change the path under "Automatically save my settings to this 
+					file:" to a path that is NOT under the "My Documents" directory.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.46&nbsp;&nbsp;&nbsp;Installation of an Add-in that accesses 
+				DTE.CommandBars before Visual Studio 2005 has been launched will lead to an 
+				Add-in load error&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551280--><P class="MsoNormal"><FONT face="Arial">After 
+					first installing Visual Studio 2005, if an Add-in is installed that tries to 
+					get DTE.CommandBars in its OnConnection, first launch of Visual Studio 2005 
+					will result in the following message:<br>
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;The Add-in &lt;Add-in name&gt; failed to load or caused 
+					an exception.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;Would you like to remove this Add-in?</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"> If you are installing Visual Studio 2005, after installation 
+					launch Visual Studio and shut it down again *before* installing any 
+					Add-ins&nbsp;
+					<br>
+					If this Add-in was already installed and you encounter the above message, click 
+					“No” and close Visual Studio. In a Command Prompt, navigate to 
+					&lt;VSInstallDir&gt;\Common7\IDE and run the following command:
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;devenv /resetaddin *<br>
+				</FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.47&nbsp;&nbsp;&nbsp;Web service references in Visual Basic or 
+				Visual J# class libraries might not reverse-engineer when building the class 
+				library is performed last.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551319--><P class="MsoNormal"><FONT face="Arial">In this 
+					scenario, a Visual Studio solution contains a Visual Basic or Visual J# class 
+					library, which contains a Web reference to a Web service. The solution also 
+					contains an ASP.NET Web site, which has a reference to the class library. After 
+					these items are added to the solution, certain configuration file entries must 
+					be copied from the class library's App.config file to the Web site's Web.config 
+					file. If the class library is built after copying the configuration file 
+					entries but before adding an application diagram to reverse-engineer these 
+					items, only the ASP.NET Web site might be reverse-engineered on the diagram. 
+					Therefore, the Web service reference might not reverse-engineer as Web service 
+					consumer endpoint on the ASP.NET application and a connection to the referenced 
+					Web service might not be reverse-engineered. If the Web reference is for a Web 
+					service that is not already on the diagram, then an external Web service for 
+					the referenced Web service might not reverse-engineer. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">1. After the application diagram is added, right-click the Web 
+					reference in the class library and choose Update Web Reference.<br>
+					2. Rebuild the class library.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.48&nbsp;&nbsp;&nbsp;Changing Table locations may cause 
+				connection to fail&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551343--><P class="MsoNormal"><FONT face="Arial">When you 
+					change the location of a table to a different database at run time, ensure that 
+					the new database contains a table that uses the same name as the one found in 
+					the original report. If the table names do not match, the connection will fail.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Make sure that the new database contains a table that uses the 
+					same name as the one found in the original report</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.49&nbsp;&nbsp;&nbsp;Do not use the Null string to set the 
+				viewer Selection Formula&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551345--><P class="MsoNormal"><FONT face="Arial">To set 
+					the viewer selection formula to display all of the records in a report, use the 
+					empty string instead of the null string. The null string fails to override the 
+					original report-selection formula. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">The empty string is represented as "" or String.Empty. The null 
+					string is represented as null in C# or Nothing in Visual Basic.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.50&nbsp;&nbsp;&nbsp;Migrating projects encoded in Shift-JIS 
+				may result in corrupt characters&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551347--><P class="MsoNormal"><FONT face="Arial">Japanese 
+					characters encoded as Shift-JIS will not appear correctly in an ASP.NET Web 
+					Application that has been migrated from Visual Studio 2002 or Visual Studio 
+					2003 to Visual Studio 2005</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Before migration, convert all of your ASP pages to UTF-8</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.51&nbsp;&nbsp;&nbsp;Namespace references lost when importing a 
+				project from Crystal Reports 9 or Crystal Reports 10&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551350--><P class="MsoNormal"><FONT face="Arial">References 
+					to the CrystalDecisions.ReportSource, CrystalDecisions.Shared, and 
+					CrystalDecisions.Windows.Forms assemblies are lost when a Windows Project from 
+					Crystal Reports 9 or Crystal Reports 10 is migrated to Crystal Reports for 
+					Visual Studio 2005.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Before you compile the application after migration, add the 
+					references manually.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.52&nbsp;&nbsp;&nbsp;Web service reference in a class library 
+				might not reverse-engineer when a Windows and ASP.NET Web project both 
+				reference that same class library.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551372--><P class="MsoNormal"><FONT face="Arial">In this 
+					scenario, a Visual Studio solution contains an application diagram with an 
+					implemented Windows and ASP.NET application. The solution also contains a class 
+					library with a Web reference to a Web service. The Windows and ASP.NET Web 
+					projects both reference this class library. After the class library is built 
+					and the necessary entries are copied from the class library's App.config file 
+					to both projects' configuration files, the Web reference might not 
+					reverse-engineer as a Web service consumer endpoint on the Windows or ASP.NET 
+					application. A connection to the referenced Web service might also 
+					not&nbsp;reverse-engineer. If the Web reference is for a Web service that is 
+					not already on the diagram, then an external Web service for the referenced Web 
+					service might not reverse-engineer. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">1. Close the application diagram.
+					<br>
+					2. Remove references to the shared class library from the Windows and ASP.NET 
+					projects.<br>
+					3. Add the class library reference to the ASP.NET project.
+					<br>
+					4. Open the application diagram.
+					<br>
+					5. Add the class library reference to the Windows project. </FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.53&nbsp;&nbsp;&nbsp;Expanding data files in server explorer in 
+				FTP Webs can crash the IDE&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551442--><P class="MsoNormal"><FONT face="Arial">If you 
+					open a FTP web site and add a data file (MDB or MDF) to the App_Data directory, 
+					then open the Server Explorer window and expand the connection to the data file
+					<br>
+					under the Data Connections node, the IDE can crash or hang, and you may lose 
+					any unsaved data.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Develop the web site from a local file location using a file 
+					system or IIS web site, and use the Copy Web Site command to transfer files to 
+					and from the FTP location.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.54&nbsp;&nbsp;&nbsp;Printing or Exporting from Firefox may 
+				throw an exception&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551358--><P class="MsoNormal"><FONT face="Arial">An 
+					exception may be thrown when users export or print a report from a 
+					CrystalReportViewer control. This problem happens when the web page includes a 
+					CrystalReportViewer control and Microsoft Web Controls and is viewed in the 
+					Firefox web browser.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Set EnableEventValidation to False in the ASP page to allow users 
+					to print or export a report in Firefox.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial"> 1.55&nbsp;&nbsp;&nbsp;Application Verifier is not enabled for 
+				mixed mode C++ projects. Instead it will produce this message:<br>
+				"Application Verifier is not supported for the selected debug mode. Please see 
+				supporting documentation for more information. Click on OK to continue 
+				debugging without verifier"&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551210--><P class="MsoNormal"><FONT face="Arial">Application 
+					Verifier is not enabled for mixed mode applications even though you will be 
+					able to select it from the Debug menu. A dialog box will appear noting that 
+					Application Verifier is not enabled and will allow you to continue debugging 
+					without Application Verifier.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"> Continue debugging without Application Verifier.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.56&nbsp;&nbsp;&nbsp;Visual Studio 2005 Team Edition for 
+				Testers: Load Test Results are not Stored in the Results Database Despite 
+				Proper Configuration&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550901--><P class="MsoNormal"><FONT face="Arial"> Load 
+					test results from a local run are not stored in the results database despite 
+					proper configuration of the load test. When this occurs, this message is 
+					displayed:<br>
+					"The load test results database could not be opened. Check that the load test 
+					results database specified by the connect string for your Test Controller (or 
+					local computer) specifies a database that contains the load test schema and 
+					that is currently available."<br>
+					The local load test results database is created during the initialization of 
+					the first local load test run. This error occurs if the user initiating the 
+					first load test run does not have sufficient privileges to create the database.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">An administrator must initiate the first load test run to force 
+					the creation of the load test results database.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.57&nbsp;&nbsp;&nbsp;Visual Studio 2005 Team Edition for 
+				Testers: Load Test Results Stored in SQL Express might not be Accessible from 
+				Remote Computers&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551217--><P class="MsoNormal"><FONT face="Arial">The SQL 
+					Express configuration and the Windows Firewall might block remote access to 
+					load test results stored in SQL Express. A default installation for SQL Express 
+					disables remote access to the database. Load Controller setup automatically 
+					sets the SQL Express configuration and the Windows Firewall configuration to 
+					allow remote access to SQL Express. However, setup on makes these configuration 
+					changes if it also installs SQL Express. Visual Studio setup can also install 
+					SQL Express but does not automatically change the SQL Express and Windows 
+					Firewall configuration to allow remote access.<br>
+					<br>
+					The following message is displayed when the load test results viewer is unable 
+					to remotely access to a load test result in SQL Express:
+					<br>
+					<br>
+					"Could not read result repository: Could not access the load test results 
+					repository: An error has occurred while establishing a connection to the 
+					server. When connecting to SQL Server 2005, this failure may be caused by the 
+					fact that under the default settings SQL Server does not allow remote 
+					connections."</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Manually configure SQL Express and the Windows Firewall to allow 
+					remote access. Use the following steps to enable remote access to SQL Express:<br>
+					<br>
+					1. Open the SQL Server Configuration Manager by clicking Start, All Programs, 
+					Microsoft SQL Server 2005, Configuration Tools, SQL Server Configuration 
+					Manager.<br>
+					2. In the left pane of the SQL Server Configuration Manger, expand the node for 
+					SQL Server 2005 Network Configuration and select Protocols for SQLEXPRESS.<br>
+					3. In the right pane, right-click Named Pipes and choose Enable.
+					<br>
+					4.&nbsp;Right-click TCIP/IP and choose Enable.<br>
+					5. In the left pane, select SQL Server 2005 Services.<br>
+					6. In the right pane, right-click SQL Server Browser and choose Properties.<br>
+					7. Click the Services tab in the Properties dialog box.<br>
+					8. On the Services page, set the Start Mode property to Automatic and click OK.<br>
+					9. Right-click SQL Server Browser and choose Start.<br>
+					10. Right click SQL Server (SQLEXPRESS) and choose Restart.<br>
+					<br>
+					Use the following steps to configure the Windows firewall.<br>
+					<br>
+					1. Open the Windows Firewall dialog box and click the Exceptions tab.<br>
+					2. Click Add Program and Browse to find sqlbrowser.exe and click OK.<br>
+					3. Click Add Program and Browse to find sqlservr.exe. Click OK.<br>
+					4. Click Add Port and enter “SQL Service” for Name, 1433 for Port number, and 
+					select the TCP radio button.<br>
+					5. Click OK on the Windows Firewall dialog</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.58&nbsp;&nbsp;&nbsp;Interop support of Long (VT_I8) is limited 
+				to WinXP&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550829--><P class="MsoNormal"><FONT face="Arial"> Latebound 
+					calls on Win2K or Win9x passing a Long (VT_I8) will fail. WinXP is the only 
+					supported platform for VT_I8 through OLE automation. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Use integer rather than long.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.59&nbsp;&nbsp;&nbsp;EnvDTE80.WindowKinds.vsWindowKindImmediate 
+				constant is incorrect&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551289--><P class="MsoNormal"><FONT face="Arial">The 
+					vsWindowKindImmediate constant will not return the correct GUID for the 
+					Immediate window</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Use the following GUID in place of the vsWindowKindImmediate 
+					constant: {ECB7191A-597B-41F5-9843-03A4CF275DDE}<br>
+					Alternatively, the following will get the correct Immediate Window GUID:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;DTE.Windows.Item("Immediate Window").ObjectKind</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.60&nbsp;&nbsp;&nbsp;Shared Add-in wizard Setup project will 
+				not work on a computer that only has Microsoft Office&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551291--><P class="MsoNormal"><FONT face="Arial">Add-ins 
+					for Office require Extensibility.dll in order to run, which is not 
+					automatically included in the Setup project for Shared Add-ins. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">In the Solution Explorer, right-click on the Add-in Setup project 
+					and select Add | Assembly. In the .NET tab, select Extensibility and press OK. 
+					Once the assembly is added, select it in the Solution Explorer and ensure that 
+					the “Register” property is set to “vsdraDoNotRegister”</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.61&nbsp;&nbsp;&nbsp;Fonts and Colors options are not reflected 
+				immediately upon reset.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551292--><P class="MsoNormal"><FONT face="Arial">A reset 
+					of environment settings can be performed by clicking Tools &gt; Import and 
+					Export Settings... and choosing "Reset all settings". A reset of environment 
+					settings can also be performed by issuing the command 
+					"Tools.ImportAndExportSettings /reset" inside the Command Window. In either 
+					case, the fonts and colors options are not reflected until a restart of Visual 
+					Studio.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">After performing a reset operation, restart Visual Studio.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">1.62&nbsp;&nbsp;&nbsp;Application Verifier is not supported for 
+				DLL based projects, ATL web service projects, and VC Smart Device projects 
+				.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551307--><P class="MsoNormal"><FONT face="Arial">Application 
+					Verifier is not supported for the following scenarios:<br>
+					1. Using Start With Application Verifier on a DLL project and loading it in an 
+					executable that is not part of the solution.<br>
+					2. Changing the <b>Command</b> in Project Properties | Debugging to something 
+					other than the currently loaded project ($TargetPath). This applies to remote 
+					debugging as well.<br>
+					3. Application Verifier is not supported for ATL web service projects as these 
+					run under a different process.<br>
+					4. Application Verifier is not supported for VC Smart Device projects as these 
+					run under a different architecture.<br>
+					Application verifier is enabled only for the exe projects loaded in the IDE.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">For scenarios 1 &amp; 2 above, load the project of the target 
+					executables in the IDE and then use Application Verifier. Using Application 
+					Verifier in all the above cases will work the same as a normal debug session 
+					(Debug | Start).</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H1><FONT face="Arial" size="5"><A name="systemrequirements"></A>2. .NET Framework </FONT>
+		</H1>
+		<H3><FONT face="Arial">2.1&nbsp;&nbsp;&nbsp;Manual test files with DBCS (double-byte 
+				character set) are not displayed properly when running.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--543730--><P class="MsoNormal"><FONT face="Arial">When you 
+					run a manual test file with DBCS in the name, you will see the manual test 
+					result window. However, the manual test is not displayed properly in that 
+					window. If you right-click on the lower section of the window, and select 
+					Refresh, the section will hang for a few minutes and then turn blank.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Use SBCS (single-byte character set) to name your manual test 
+					files. If you want, you can use "DBCS" in the description of the manual tests.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.2&nbsp;&nbsp;&nbsp;Wrong version of msvsmon.exe gets launched 
+				on 64-bit computer running 32-bit Visual Studio 2005 and SQL Server 2005.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548306--><P class="MsoNormal"><FONT face="Arial"> SQLCLR 
+					debugging will fail on a 64-bit computer, when Visual Studio 2005 (x86) and SQL 
+					Server 2005 (x86) are installed. The following message is displayed:<br>
+					<br>
+					---------------------------<br>
+					Microsoft Visual Studio<br>
+					---------------------------<br>
+					Unable to debug .NET code. Could not attach to SQL Server process on '<Machine Name>'. The 64-bit version of the Visual Studio Remote Debugging Monitor (MSVSMON.EXE) cannot debug 32-bit processes or 32-bit dumps. Please use the 32-bit version instead.<br>---------------------------<br>OK   <br>---------------------------<br><br>
+					The 64-bit version of msvsmon.exe gets launched automatically because the 
+					operating system on the computer is 64-bit. The 32-bit version should be 
+					launched instead because both applications are 32-bit. This is an architectural 
+					problem that can not be fixed at this point.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">The user can manually launch the 32-bit version of msvsmon.exe 
+					when trying to do SQLCLR debugging on the local computer.<br>
+					<br>
+					It is not recommended that the 32-bit version of msvsmon.exe be registered 
+					to&nbsp;launch automatically, because this would break other 64-bit debugging 
+					scenarios.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.3&nbsp;&nbsp;&nbsp;AuthorizationStoreRoleProvider: Incorrect 
+				or obscure errors are returned from Authorization Manager&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550128--><P class="MsoNormal"><FONT face="Arial">The 
+					AuthorizationStoreRoleProvider depends on Authorization Manager. Not all error 
+					messages returned from AuthorizationManager indicate the root cause of a 
+					problem. Listed below are error messages that are known to be either incorrect 
+					or vague.<br>
+					<br>
+					"COMException (0x8007052b): Unable to update the password. The value provided 
+					as the current password is incorrect."<br>
+					This error is really an access denied error. If all of the following conditions 
+					are met, this error can occur: ASP.NET is deployed on IIS 5.0, Windows XP IIS 
+					5.1, or in IIS 5.0 isolation mode on Windows Server 2003, the application is 
+					configured to use Integrated Windows Authentication, and the policy file is 
+					located inside of the directory structure of the current ASP.NET application. 
+					If ASP.NET is running as a local computer account and attempts to access a 
+					policy store in a remote AD or ADAM instance this error can also occur.<br>
+					<br>
+					"More data is available"<br>
+					This error really means that the policy store could not be found. If the 
+					connection string points at an ADAM instance, but the connection string 
+					references an ADAM partition that does not exist, this error can occur. For 
+					example, in the following connection string 
+					“LDAP://localhost:4000/Cn=storename, DC=Partition1”, if Partition1 does not 
+					exist in the ADAM instance, this error will occur.<br>
+					<br>
+					"The specified server cannot perform the requested operation"<br>
+					This error really means that the specified server could not be found. If the 
+					connection string points at a non-existent server, or uses a port number that 
+					AD or ADAM are not listening on, this error can occur.
+					<br>
+					<br>
+					"ArgumentException: The parameter is incorrect"<br>
+					This error message really indicates that an LDAP query group in Authorization 
+					Manager used to determine if a user is in a role is invalid.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">For each error condition listed above, review the possible 
+					causes. If an application's configuration matches one of the possible causes, 
+					change or fix the application's configuration based on the information listed 
+					above.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.4&nbsp;&nbsp;&nbsp;SQL Server Express User Instances Should be 
+				Disabled on Shared Hosting Computers</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550139--><P class="MsoNormal"><FONT face="Arial">ASP.NET 
+					2.0 integrates with SQL Server Express 2005 to provide automatic creation of 
+					the database required by many of ASP.NET 2.0's new application services. This 
+					functionality relies on SQL Server Express' support for spawning server 
+					processes that run with the identity of either the interactive user or the 
+					identity of the worker process hosting ASP.NET. In un-trusted environments such 
+					as on a shared hosting server, the ability to spawn SQL Server worker processes 
+					should not be enabled due to the potential for unintentionally sharing data 
+					between ASP.NET applications.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">If you are installing SQL Server Express using the standalone 
+					installer, you can use the advanced setup options to explicitly disable support 
+					for user instancing.<br>
+					<br>
+					Alternatively you can manually disable user instancing for an existing SQL 
+					Server Express installation as follows:<br>
+					1. While logged in as a local box administrator, open a command window by 
+					running cmd.exe
+					<br>
+					2. If osql.exe is not available from any directories listed in the PATH 
+					environment variable, change directories to the SQL Server Express directory 
+					that contains osql.exe.<br>
+					3. Connect to the parent instance of SQL Server: osql –E –S .\sqlexpress<br>
+					4. Issue the following Sql commands:<br>
+					exec sp_configure 'show advanced option', '1'
+					<br>
+					go<br>
+					reconfigure with override<br>
+					go<br>
+					exec sp_configure 'user instances enabled', 0<br>
+					&nbsp;&nbsp;&nbsp;&nbsp; go<br>
+					reconfigure with override<br>
+					go</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.5&nbsp;&nbsp;&nbsp;Persistent cookies for forms authentication 
+				now use the same timeout setting as session based cookies.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550144--><P class="MsoNormal"><FONT face="Arial">In 
+					previous versions of ASP.NET, persistent forms authentication cookies had a 
+					hardcoded lifetime of 50 years. In ASP.NET 2.0 persistent form authentication 
+					cookies have their expiration date set to the current date time plus the value 
+					of the "timeout" attribute from configuration. By default this means persistent 
+					cookies will have a lifetime of 30 minutes. If you want a longer lifetime you 
+					will need to increase the value of the "timeout" attribute. In ASP.NET 2.0 this 
+					means that forms authentication tickets stored in both session-based and 
+					persistent cookies will use the new timeout value</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">If different timeout values are desired for persistent cookies, a 
+					developer can get a reference to the forms authentication cookie after 
+					initially setting the cookie with a method like 
+					FormsAuthentication.SetAuthCookie. A developer can then get a reference to the 
+					cookie with a call to: Response.Cookies[FormsAuthentication.FormsCookieName]. 
+					On the resultant HttpCookie a developer can then set the Expires property to a 
+					different value.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.6&nbsp;&nbsp;&nbsp;Incorrect behavior of DeleteRole method on 
+				the AuthorizationStoreRoleProvider&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550147--><P class="MsoNormal"><FONT face="Arial">The 
+					DeleteRole method on the provider incorrectly throws an exception stating 
+					"Element not found" if an attempt is made to delete a non-existent role. The 
+					provider should be returning false instead. Also, if an attempt is made to 
+					delete a role that has existing users in it, the provider will return false 
+					instead of throwing an exception. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">1. Wrap all calls to the provider's DeleteRole method inside of a 
+					try-catch block. This will ensure that any future fixes that re-enable 
+					exceptions when deleting populated roles will not impact existing code.<br>
+					2. Check to see if the role exists prior to attempting to delete the role.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.7&nbsp;&nbsp;&nbsp;ASP.NET Profile feature can fail when using 
+				Xml serialization and a non-default application identity&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550156--><P class="MsoNormal"><FONT face="Arial">The 
+					default property serialization mechanism for the ASP.NET Profile feature is Xml 
+					serialization. If the ASP.NET process identity is something other than ASPNET 
+					(on IIS 5.0 and IIS 5.1) or NETWORK SERVICE (for IIS 6), then the Xml 
+					serialization process will fail with an exception stating 
+					"InvalidOperationException: Unable to generate a temporary class." The same 
+					problem will occur if using application impersonation. These exceptions occur 
+					because the XmlSerializer writes temporary class files into the %windir%\temp 
+					directory. By default this directory only grants " List Folder/Read Data" 
+					permissions to the default ASP.NET accounts. Non-default ASP.NET accounts are 
+					able to write temporary files into this directory, but do not have the 
+					necessary privilege to subsequently find the temporary classes for use by the 
+					XmlSerializer.<br>
+				</FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">For secure environments, developers should use a different 
+					serialization mechansim - either binary serialization or string serialization. 
+					For applications where the potential for accidentally sharing temporary class 
+					files across applications is not high, the worker process or application 
+					impersonation identity can be granted the "List Folder/Read Data" privilege on 
+					the %windir%\temp directory.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.8&nbsp;&nbsp;&nbsp;ASP.NET Session State Limitations when 
+				using SSE&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550178--><P class="MsoNormal"><FONT face="Arial">SSE 
+					should only be used in development environments with ASP.NET Sql Server based 
+					session state because there is no Sql Server Agent service installed with SSE. 
+					As a result the session state cleanup job never runs and session state data 
+					will accumulate in the database. You can manually cleanup expired sessions by 
+					connecting to SSE and running the following command: "EXECUTE 
+					DeleteExpiredSessions".</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Use one of the standard versions of Sql Server 2005 for 
+					production applications.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.9&nbsp;&nbsp;&nbsp;AuthorizationStoreRoleProvider: Default 
+				value for ApplicationName results in an error from Authorization Manager.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550124--><P class="MsoNormal"><FONT face="Arial">Authorization 
+					Manager does not allow the "/" character in application names. In the absence 
+					of applicationName being set in configuration, the 
+					AuthorizationStoreRoleProvider follows the same logic used by other ASP.NET 
+					providers to determine a default value for applicationName. When running within 
+					ASP.NET, this results in a value that starts with the "/" character. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Always set the applicationName attribute in configuration when 
+					using the AuthorizationStoreRoleProvider within an ASP.NET application.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.10&nbsp;&nbsp;&nbsp;On Windows 98 and Windows ME, debugging an 
+				application that consumes a Web Service causes the application to hang&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550503--><P class="MsoNormal"><FONT face="Arial"> In 
+					Visual Studio 2005, when debugging an application on Windows 98 or Windows ME 
+					that consumes a Web Service, the application hangs.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"> Disable&nbsp;the debugger component csm.dll, and use breakpoints 
+					to stop in the Web Service.<br>
+					<br>
+					To disable csm.dll, please follow the instructions below:<br>
+					<br>
+					1) On the Windows Start meu, select Run.<br>
+					2) In the Run dialog, type regedit.exe.<br>
+					3) Goto HKEY_CLASSES_ROOT\CLSID\{12A5B9F0-7A1C-4FCB-8163-160A30F519B5}.<br>
+					4) Verify that you are on the right registry key by checking that 
+					InprocServer32\(default) has the value ' &lt;drive&gt;:\Program Files\Common 
+					Files\Microsoft Shared\VS7Debug\csm.dll'.<br>
+					5) Delete the registry key 
+					(HKEY_CLASSES_ROOT\CLSID\{12A5B9F0-7A1C-4FCB-8163-160A30F519B5}).</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.11&nbsp;&nbsp;&nbsp;C# Code Snippet shortcuts cannot contain 
+				non-spacing marks. &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550619--><P class="MsoNormal"><FONT face="Arial"> C# Code 
+					Snippets are defined in XML within .snippet files. One of the possible tags in 
+					the schema is a &lt;Shortcut&gt;&lt;/Shortcut&gt; tag. Shortcuts can be used to 
+					quickly insert a snippet. To do so, a user simply needs to type the shortcut 
+					string and then press Tab.
+					<br>
+					<br>
+					Many unicode characters are allowed within shortcut strings, but non-spacing 
+					marks found in complex script languages are not recognized as valid shortcut 
+					characters. This means that some strings in complex script languages cannot be 
+					used as shortcuts. If a shortcut does contain a non-spacing mark, typing the 
+					shortcut string and pressing Tab will insert a Tab character but will not 
+					insert the snippet code.
+					<br>
+					Note: The snippet shortcut will still appear in IntelliSense.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">1. Choose a Unicode shortcut name that does not contain a 
+					non-spacing mark.<br>
+					2. Insert the snippet through the Snippet Picker UI instead of using shortcuts. </FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.12&nbsp;&nbsp;&nbsp;System.Net has removed the logic to time 
+				out a DNS resolve when the timeout is less than the timeout in the unmanaged 
+				API that is called by System.Net to perform the resolution.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550832--><P class="MsoNormal"><FONT face="Arial">In 
+					previous versions of the .NET Framework, System.Net's DNS added timeout logic 
+					to the Dns type in order to circumvent the lengthy native timeout. Without an 
+					accurate DNS timeout, it is not possible to set accurate timeouts for other web 
+					requests. However, to implement this timeout, the DNS resolve is offloaded to a 
+					separate thread. If the thread pool level is low, the DNS resolve may wait for 
+					an available thread until it times out, resulting in an exception being thrown. 
+					To avoid this exception, the DNS timeout logic has been removed.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There is no known resolution.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.13&nbsp;&nbsp;&nbsp;SqlCacheDependency requires initialization 
+				with a call to System.Data.SqlClient.SqlDependency.Start&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550835--><P class="MsoNormal"><FONT face="Arial"> Due to 
+					changes in how query notifications work with SQL Server 2005, developers must 
+					call the Start method on SqlDependency at least once prior to using 
+					SqlCacheDependency. A logical place to call Start is inside a web application's 
+					Application_Start method located in global.asax:<br>
+					<br>
+					void Application_Start(object sender, EventArgs e)
+					<br>
+					{<br>
+					System.Data.SqlClient.SqlDependency.Start("connection string");<br>
+					}<br>
+					<br>
+					The connection string must be the same one that will be used when issuing 
+					commands for use with SqlCacheDependency.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.14&nbsp;&nbsp;&nbsp;System.Net no longer adds a CRLF character 
+				when calling WebClient.UploadValues() &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550863--><P class="MsoNormal"><FONT face="Arial">In 
+					previous versions of the .NET framework, calls to WebClient.UploadValues() 
+					would add a CRLF to the uploaded content resulting in server application 
+					failures. The CRLF characters violate the application/x-www-form-urlencoded 
+					content type encoding scheme, as described in the HTML 4.01 specification. The 
+					CRLF is no longer added.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Use WebClient.UploadData() to add the CRLF and recompile your 
+					application or fix the server application to not expect the CRLF character.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.15&nbsp;&nbsp;&nbsp;UriBuilder no longer clears the Fragment 
+				or Query properties after they are set &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550878--><P class="MsoNormal"><FONT face="Arial"> UriBuilder 
+					is a type that allows building a Uri instance piece by piece. In previous .NET 
+					Framework versions, Query properties and Fragment properties&nbsp;could not be 
+					set at the same time.&nbsp; This error has been fixed in version 2.0. Query and 
+					Fragment properties are now set without having any fields inadvertently 
+					cleared. Applications that have worked around the previous behavior may need to 
+					adjust their logic to avoid erroneous behavior.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There is no known resolution.</FONT></P>
+			<P><FONT face="Arial"></FONT>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.16&nbsp;&nbsp;&nbsp;The permissions demanded before applying 
+				the values present in the system.net element of an application configuration 
+				file have changed. &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550880--><P class="MsoNormal"><FONT face="Arial">The 
+					permissions required to apply the settings present in the System.Net element of 
+					an application configuration file are changed from previous .NET framework 
+					versions. The permissions required to apply values from the configuration file 
+					are now the same as those required by the associated property when changing the 
+					setting in code. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There is no known resolution.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.17&nbsp;&nbsp;&nbsp;Sending an FTP request followed by an FTP 
+				request over SSL (FTPs) to the same directory throws a file cannot be found 
+				exception&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550885--><P class="MsoNormal"><FONT face="Arial"> If an 
+					application issues a FTP request to a server, and then issues another FTP 
+					request, with SSL enabled to the same server and path, the second request will 
+					fail. A file not found exception will be thrown. However, if the second request 
+					is not to the same path, the request will succeed.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.18&nbsp;&nbsp;&nbsp;WebRequest.ServicePoint.Address demands 
+				unrestricted web permission only when the service point in question is a proxy 
+				server &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550886--><P class="MsoNormal"><FONT face="Arial">This new 
+					demand prevents applications running in partial trust from discovering network 
+					proxy addresses. Partially trusted applications using ServicePoint.Address API 
+					may get a SecurityException if the address points to a proxy server.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Use HttpWebRequest.Address</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.19&nbsp;&nbsp;&nbsp;Exceptions to Parity between 32-bit and 
+				64-bit behavior for Visual Studio and .NET Framework&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551048--><P class="MsoNormal"><FONT face="Arial"><br>
+					1. Front Page Server Extensions for IA64 WOW64&nbsp;&nbsp;&nbsp;&nbsp;<br>
+					<br>
+					When using .NET Framework 1.1 to author a website on a remote IA64 computer 
+					running .NET Framework 1.1, FrontPage will not be a supported mechanism. Some 
+					basic functionality will work via the fileshare mechanism.<br>
+					<br>
+					2. J# does not support running on native 64-bit. J# code can only run in WOW64 
+					on 64-bit platforms.&nbsp;&nbsp;&nbsp;&nbsp;<br>
+					<br>
+					3. SQL Server Express is not supported on 64-bit for .NET Framework 2.0.<br>
+					<br>
+					4. There are no peformance or scalability guarantees for high-load ASP.NET 
+					applications running on .NET Framework 1.1 in WOW64 for IA64.<br>
+					<br>
+					5. Data breakpoints do not work with Visual Studio 2005&nbsp;running on IA64 in 
+					WOW64.&nbsp;&nbsp;&nbsp;&nbsp;<br>
+					<br>
+					6. In Visual Studio 2005, the Edit and Continue debugger feature does not work 
+					on 64-bit<br>
+					<br>
+					7. In Visual Studio 2005, VC ATL exceptions:&nbsp;&nbsp;&nbsp;&nbsp;<br>
+					<br>
+					- Build system doesn't register dlls targeting 64-bit on wow64<br>
+					<br>
+					- Error ""%1 is not a valid Win32 application"" when debugging default ATL 
+					Server project on 64-bit computer.<br>
+					<br>
+					- Executable to debug and URL are not prepopulated for ATL Server projects with 
+					64-bit configurations<br>
+					<br>
+					- Internet Explorer does not come up with .srf file specified by user when 
+					debugging 64-bit ATL Server project.
+					<br>
+					<br>
+					- Debugger type for ATL Server 64-bit configuration defaults to local windows 
+					debugger instead of web service debugger<br>
+					<br>
+					- Debugging properties are not propagated to new configurations in a project. 
+					This means, for example, that if you start out with an ATLServer project in x86 
+					and&nbsp;then create a 64-bit configuration for it, debugging will not work 
+					without changing the debuggee to be Internet Explorer.
+					<br>
+					<br>
+					<br>
+					8. There is no support for interop debugging (managed + unmanaged mixed-mode 
+					debugging) in 64-bit.<br>
+					<br>
+					9. Some MDAs are not supported on 64-bit&nbsp;for example: Re-entrancy, 
+					LoaderLock, PInvokeStackImbalance
+					<br>
+					<br>
+					10. MMX intrinsics are not supported by the IA64 and x64 C++ compilers.<br>
+					<br>
+					11. Inline assembly is not supported by IA64 and x64 C++ compilers.<br>
+					<br>
+					12. Most High Level Language constructs are not supported by x64 MASM.<br>
+					MASM does not support IA64, but we ship Intel's assembler (ias.exe)<br>
+					<br>
+					13. In Visual Studio 2005, VC++ compiler switch /ARCH:SSE is not supported by 
+					x64 and IA64 VC++ compilers.<br>
+					<br>
+					14. The System.Diagnostics.Process.MainModule and 
+					System.Diagnostics.Process.Modules APIs will fail if running under the WOW64 on 
+					a 64bit child process.
+					<br>
+					<br>
+					15. 32bit and 64bit COM+ serviced components with the same GUID/CLSID cannot be 
+					registered at the same time.
+					<br>
+					<br>
+					16. 64-bit SDK does not include native DBGCLR. DBGCLR will be WOW64 only.<br>
+					<br>
+					17. 64-bit SDK does not include a native DEXPLORE.EXE. DEXPLORE.EXE will be 
+					WOW64 only.<br>
+					<br>
+					18. There are no bootstrapper manifest packages for x64 and IA64<br>
+					<br>
+					There is no 64-bit bootstrapper for ClickOnce or other applications. On any 
+					64-bit computer that has .NET Framework installed, if you try to install a 
+					ClickOnce application, it fails with the message “This version of the .NET 
+					Framework 2.0 is not supported on a 64-bit operating system. Contact your 
+					application vendor.”
+					<br>
+					<br>
+					This even happens for applications that are authored as 32-bit only and would 
+					have run in WOW64.<br>
+					<br>
+					19. Visual Studio 2005 does not install on IA64&nbsp;&nbsp;&nbsp;&nbsp;<br>
+					<br>
+					Visual Studio 2005&nbsp;will not install on IA64 (no design time support for 
+					IA64). Visual C++ will have a native IA64 command line tools installer.<br>
+					<br>
+					20. Only Visual Studio Team System will allow building applications that target 
+					IA64&nbsp;&nbsp;&nbsp;&nbsp;<br>
+					<br>
+					<br>
+					21.P/Invoke signatures with blittable types are treated differently on 
+					64-bit&nbsp;because P/Invoke is implemented differently on 64-bit, hence there 
+					are cases where incorrect P/Invoke signatures that accidentially worked on 
+					32-bit don't work on 64-bit.
+					<br>
+					<br>
+					22. Visual Studio 2005&nbsp;Tools for Office is not supported on 64-bit.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;<br>
+				</FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.20&nbsp;&nbsp;&nbsp;When performing a refactoring operation in 
+				a C# web site, build errors may be reported when none actually exist&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551093--><P class="MsoNormal"><FONT face="Arial">In 
+					certain cases, when performing a refactoring command in a C# web site that 
+					contains no build errors, the user may get a warning indicating that the 
+					project or one of its dependencies does not currently build and that references 
+					may not be updated.<br>
+					This dialog can be safely ignored by clicking on the Continue or Preview 
+					buttons. The refactoring will succeed and all references will be updated.<br>
+					<br>
+					The following are examples of common project configurations in which this 
+					warning will be shown:<br>
+					- Web projects migrated from previous versions of Visual Studio, which contain 
+					a global.asax file in the web directory and a global.asax.cs file in the 
+					App_Code directory.<br>
+					- Web projects in which web pages reference web user controls which in turn 
+					reference types declared in the App_Code directory.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There is no known resolution.&nbsp; However, the warning can be 
+					safely ignored.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.21&nbsp;&nbsp;&nbsp;System.Net now registers a default 
+				FtpWebRequest implementation that may cause applications using their own FTP 
+				component to break &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550872--><P class="MsoNormal"><FONT face="Arial">Prior to 
+					.NET Framework version 2.0, applications could register a component to handle 
+					FTP requests using System.Net's extensible pluggable protocol framework. 
+					Components for handling different web requests are registered by associating 
+					the component with a specific URI prefix. Any web request that matches that 
+					prefix is then handled by that component. In .NET Framework 2.0, System.Net now 
+					supports an FtpWebRequest component that is registered by default for the 
+					“ftp:” prefix. Any applications that are registering for this prefix (prior to 
+					this release) could now be broken because the prefix (FTP) is already taken.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Update the application configuration file to remove the default 
+					FTP protocol component prior to registering your own FTP component:<br>
+					&lt;system.net&gt;<br>
+					&lt;webRequestModules&gt;<br>
+					&lt;remove prefix = “ftp:” /&gt;<br>
+					&lt;/webRequestModules&gt;<br>
+					&lt;/system.net&gt;</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.22&nbsp;&nbsp;&nbsp;In .NET Framework 2.0, 
+				GlobalProxySelection.Select behaves differently than in version 1.1&nbsp;when 
+				an empty System.Net tag is present in the machine.config file &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550873--><P class="MsoNormal"><FONT face="Arial">In 
+					version 1.1 of the .NET Framework, specifying an empty System.Net element in 
+					the machine.config file, GlobalProxySelection.Select returns an empty web proxy 
+					instance indicating that no proxy is to be used. In version 2.0, the new 
+					default is that the system proxy settings (same as what is specified in 
+					Internet Explorer) will be used in this case.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Modify the machine.config file to disable the default proxy as 
+					shown below.<br>
+					&lt;system.net&gt;<br>
+					&lt;defaultProxy enabled=”false” /&gt;<br>
+					&lt;/system.net&gt;</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.23&nbsp;&nbsp;&nbsp;System.Uri does not include the IPv6 scope 
+				ID with the host. &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550875--><P class="MsoNormal"><FONT face="Arial">In 
+					previous .NET Framework versions, if you created a Uri instance using an IPv6 
+					address, the scope ID is always included with the host address. The scope ID 
+					refers to the index of a local network adapter, and has no meaning for a remote 
+					host. The scope ID also uses a '%' character in its syntax, which conflicts 
+					with the Uri escaping format of '%hh'. Including the scope ID in the host 
+					breaks System.Uri's ability to interoperate with other URI parsers and 
+					resolvers. In version 2.0, System.Uri no longer includes the scope ID with an 
+					IPv6 host in a Uri instance. System.Uri has also added a new property, 
+					DnsSafeHost, which will return the scope ID with an IPv6 host address.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Use Uri.DnsSafeHost which will return the scope ID with an IPv6 
+					host address</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.24&nbsp;&nbsp;&nbsp;Specifying a cluster as a remote proxy 
+				through System.Transactions configuration may throw a TransactionException 
+				during cluster failover&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551378--><P class="MsoNormal"><FONT face="Arial">If a 
+					cluster is specified as a remote proxy in configuration by setting the 
+					DistributedTransactionManagerName to a cluster, a TransactionException may be 
+					thrown during cluster failover.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">To specify a cluster as a remote proxy, use the Component 
+					Services MMC to configure MSDTC to use the cluster as the remote MSDTC.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.25&nbsp;&nbsp;&nbsp;The message, "Microsoft C# 2005 
+				IntelliSense has encountered a problem" can appear when performing various 
+				actions in the IDE.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551394--><P class="MsoNormal"><FONT face="Arial"><br>
+					In certain cases, the message "Microsoft C# 2005 IntelliSense has encountered a 
+					problem. We are sorry for the inconvenience" can appear while performing 
+					various actions in the editor. The reason in most cases is there is a failure 
+					with retrieving the source data.<br>
+					<br>
+					Some examples of actions that could trigger this message include:<br>
+					- Renaming an external alias.<br>
+					- Performing a "find all references" in a web project with no 'runat="server"' 
+					attribute.<br>
+					<br>
+					This is a non-fatal condition. Clicking the send report button will allow a 
+					user to safely continue working as expected and no data will be lost.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There are two possible options to turn off display of all 
+					non-fatal error message from the C# language service. To do this, modify the 
+					registry under the registry path:<br>
+					<br>
+					[HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\8.0\CSharp\Options\Editor]
+					<br>
+					<br>
+					(1) "Watson_ReportExceptions"=dword:00000001<br>
+					Adding the following registry key with the specified value will disable error 
+					reporting completely.<br>
+					<br>
+					Note: Using this registry key and turning off all non-fatal error messages from 
+					the C# language service can potentially prevent gathering feedback on scenarios 
+					not related to this failure.<br>
+					<br>
+					(2) "Watson_DeferSendingUntilLater"=dword:00000000<br>
+					Adding the following registry key with the specified value will turn of the 
+					display of the message but will continue to send feedback to Microsoft. The IDE 
+					will be unresponsive for a brief period as information is collected to send.<br>
+				</FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.26&nbsp;&nbsp;&nbsp;NullReferenceException thrown trying to 
+				get the transaction's DistributedIdentifier during transaction promotion&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551395--><P class="MsoNormal"><FONT face="Arial">Attempting 
+					to get the DistributedIdentifier on a Transaction while the transaction is 
+					promoting may cause a NullReferenceException to be thrown.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There are two ways to work around this issue.</FONT></P>
+			<P><FONT face="Arial">Ensure that access to the transaction is synchronized.</FONT></P>
+			<P><FONT face="Arial">-or-</FONT></P>
+			<P><FONT face="Arial">Ensure that the transaction has promoted before checking the the 
+					DistributedIdentifier property.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.27&nbsp;&nbsp;&nbsp;ASP.NET Web Service proxies generated 
+				using Add Web Reference will all use the same URL taken from the configuration 
+				file even if the service has multiple endpoints with different URLs&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551410--><P class="MsoNormal"><FONT face="Arial">When 
+					adding a Web Reference in Visual Studio 2005, the URL of the service is 
+					automatically picked up from the AppSettings section in the configuration file. 
+					If the web service has multiple endpoints with different URLs, multiple proxy 
+					types will be generated but they will all use the same URL value taken from the 
+					configuration file.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There are two possibilities:<br>
+					1. Edit the WSDL document and break out each service into a separate document.</FONT></P>
+			<P><FONT face="Arial"> -or-<br>
+					2. Edit the configuration file to add a key for each Web service and then read 
+					the values out in your code using 
+					System.Configuration.ConfigurationSettings.AppSettings. Set the URL property on 
+					your proxy instances using these values.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.28&nbsp;&nbsp;&nbsp;Support for Nullable&lt;T&gt; by default 
+				in generated ASP.NET Web Service proxies can break existing code when proxy is 
+				re-generated&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551411--><P class="MsoNormal"><FONT face="Arial">When 
+					importing a schema that contains the nullable="true" attribute for an ASP.NET 
+					Web Service, the generated proxy will contain Nullable&lt;T&gt; types, whereas 
+					previously the attribute was ignored. This change may cause design time or 
+					runtime breaks in applications.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Possible workarounds are to avoid regenerating your proxy types, 
+					to recompile your code using the new Nullable&lt;T&gt; pattern, or to change 
+					the schema to not use the nullable="true" attribute.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.29&nbsp;&nbsp;&nbsp;Setting the Proxy property to null on a 
+				web service proxy instance does not cause the request to go directly to the 
+				server&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551412--><P class="MsoNormal"><FONT face="Arial"> Setting 
+					the Proxy property to null on a web service proxy instance should force the 
+					request to bypass any web proxy server settings and go directly to the server. 
+					However, this functionality does not currently work. The null value will be 
+					ignored and any configured web proxy server settings will be used instead.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">You can set the Proxy property on the underlying WebRequest 
+					directly by deriving from the proxy type and overriding the GetWebRequest 
+					method:<br>
+					<br>
+					protected override WebRequest GetWebRequest(Uri uri)<br>
+					{<br>
+					WebRequest req = base.GetWebRequest(uri);<br>
+					req.Proxy = this.proxy;<br>
+					return req;<br>
+					}</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.30&nbsp;&nbsp;&nbsp;Using .NET Remoting and Runtime 
+				Serialization across different versions of the .NET Framework&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551403--><P class="MsoNormal"><FONT face="Arial">When 
+					exchanging data between an application running on one version of the .NET 
+					Framework and an application running on another version (using .NET Remoting or 
+					Runtime Serialization), exceptions may be encountered while serializing or 
+					deserializing certain Framework types. These exceptions indicate that these 
+					types are incompatible across the different Framework versions – that is, it is 
+					impossible to send them from one version of the Framework to another.
+					<br>
+					<br>
+					.NET Framework 2.0 includes a technology called Version Tolerant Serialization 
+					that eliminates this problem. However, previous versions of the Framework still 
+					face this issue. Thus, a patch will be made available that adds some Version 
+					Tolerant Serialization capabilities to .NET Framework 1.1. This patch will 
+					require Service Pack 1. After installing the patch, an application running on 
+					the patched Framework will be able to communicate with an application running 
+					on .NET Framework 2.0 without encountering this versioning issue. There are no 
+					plans to provide such a patch for .NET Framework 1.0.<br>
+					<br>
+					It is worth noting that Version Tolerant Serialization only addresses 
+					versioning when using Binary Serialization, either directly or through .NET 
+					Remoting. When using SOAP serialization (either directly through the 
+					SoapFormatter class or through .NET Remoting) across different versions of the 
+					Framework, the versioning issues discussed above may still be encountered.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">To obtain this patch, please see the following Knowledge Base 
+					article: <a href="http://support.microsoft.com/?kbid=907262">http://support.microsoft.com/?kbid=907262.</a></FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.31&nbsp;&nbsp;&nbsp;Specifying a non default trace listener 
+				for System.Transactions tracing does not work in partial trust&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551405--><P class="MsoNormal"><FONT face="Arial">Specifying 
+					a specific trace listener for System.Transactions tracing in the configuration 
+					is not supported in partial trust and will cause an exception to be thrown. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">The default trace listener is supported in partial trust, so if 
+					no listener is specified in configuration, the traces will be caught by the 
+					default listener and printed to debug.outputstring. These traces can be viewed 
+					in partial trust by using DBMon.exe.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.32&nbsp;&nbsp;&nbsp;Date and Time calculations in Web Services 
+				or XML Serialization scenarios may be incorrect after migrating to .NET 
+				Framework 2.0&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551400--><P class="MsoNormal"><FONT face="Arial">.NET 
+					Framework 2.0 changes the way dates and times are written to and read from XML. 
+					This change mostly affects the following scenarios:<br>
+					- Using times with an unspecified time zone or times in the UTC time zone<br>
+					- Interoperability scenarios with 3rd-party software that writes out time 
+					values to XML without specifying a time zone or specifying the UTC time zone<br>
+					<br>
+					The changes may cause certain date and time calculations and comparisons to 
+					become incorrect. In these cases, it may be necessary to revert to the earlier 
+					date/time behavior.
+					<br>
+				</FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">To revert to the earlier date/time behavior, apply the following 
+					configuration change:<br>
+					<br>
+					&lt;system.xml.serialization&gt;<br>
+					&lt;dateTimeSerialization mode="Local" /&gt;<br>
+					&lt;/system.xml.serialization&gt;</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.33&nbsp;&nbsp;&nbsp;Windows User Profiles for ASP.NET 
+				Automatic Database Creation with SQL Server Express and IIS&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550133--><P class="MsoNormal"><FONT face="Arial">The 
+					ASP.NET automatic MDF creation process for SQL Server providers using&nbsp;SQL 
+					Server Express (SSE) and IIS only works when IIS is running either as the local 
+					ASP.NET computer account, or as NT AUTHORITY\NETWORK SERVICE. The automatic 
+					creation process also works when a developer is interactively developing using 
+					Cassini (i.e. file based webs). However, when developing against IIS using 
+					either a different local computer account, or a domain user account, the 
+					automatic database creation process will fail because these accounts do not 
+					have a Windows user profile available on the web server. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There is no resolution for this issue. Automatic database 
+					creation with SSE for IIS-based websites will only work for the ASPNET and 
+					NETWORK SERVICE accounts.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.34&nbsp;&nbsp;&nbsp;Unicode Surrogate Behavior with ASP.NET 
+				Providers that use SQL Server 7.0 or 2000&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550135--><P class="MsoNormal"><FONT face="Arial"> ASP.NET 
+					providers that use SQLServer are constrained to the level of Unicode surrogate 
+					support provided by SQLServer 7.0 and SQL Server 2000. SQL Server 7.0 and 2000 
+					store and retrieve surrogate pairs losslessly. However, there is no linguistic 
+					comparison for surrogates. Surrogate characters are ignored during comparison 
+					operations and during uniqueness checks when using these versions of SQL 
+					Server. For example this means the SqlMembershipProvider will consider two 
+					usernames that only include surrogate characters to be identical. This behavior 
+					will lead to a uniqueness constraint violation if an attempt is made to create 
+					a second user with a username that differs from an existing user only in 
+					surrogate characters.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There is no known resolution for these versions of SQL Server.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.35&nbsp;&nbsp;&nbsp;FileWebRequest.PreAuthenticate only 
+				returns false&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550830--><P class="MsoNormal"><FONT face="Arial">Types 
+					that inherit from WebRequest inherit a PreAuthenticate property. This property 
+					is used to enable sending authentication information along with the request 
+					without waiting for a challenge from the server. FileWebRequest does not 
+					support preauthentcation, so its PreAuthenticate property should always return 
+					false. In previous .NET Framework versions, if the PreAuthenticate property was 
+					set to true by an application, it would return true when its value was later 
+					queried. This is no longer the case. FileWebRequest's PreAuthenticate property 
+					will always return false.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Users should not use the PreAuthenticate property on 
+					FileWebRequest.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">2.36&nbsp;&nbsp;&nbsp;Using generic types with .NET Remoting and 
+				SOAP Serialization&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551414--><P class="MsoNormal"><FONT face="Arial">The .NET 
+					Remoting technology supports both binary and SOAP serialization – that is, 
+					remoting messages may be represented in a Microsoft-specific binary format or 
+					as SOAP XML. However, generic types (which are a new feature in .NET Framework 
+					2.0) may only be used with binary serialization. The usage of generics with 
+					SOAP serialization is not supported, neither through .NET Remoting nor by using 
+					the SoapFormatter class directly.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There is no known resolution for this issue.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H1><FONT face="Arial" size="5"><A name="systemrequirements"></A>3. Smart Device 
+				Programmability </FONT>
+		</H1>
+		<H3><FONT face="Arial">3.1&nbsp;&nbsp;&nbsp;F11 into a DLL function is not working for 
+				X86 SmartDevice Project&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--543502--><P class="MsoNormal"><FONT face="Arial">1. 
+					Create a Win32 smart device project Dll with a function DllFunc with any piece 
+					of code with this function exported by the dll targeting x86 platform.<br>
+					2. Create a Win32 smart device project exe that does a LoadLibrary on this dll 
+					and invoked the DllFunc added to the same solution. Make sure this is set as 
+					the startup project.<br>
+					3. Compile, Deploy and Debug the solution.
+					<br>
+					4. Try to step into (F11) into the DllFunc. F11 turns into F10 on this special 
+					DllFunc() gotten from GetProcAddress and only on x86 platform. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">View DllFunc on the debugger window to get the hex address and 
+					then setting the breakpoint on the disassembly.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.2&nbsp;&nbsp;&nbsp;Managed attaching to a native process does 
+				not return an error&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--543504--><P class="MsoNormal"><FONT face="Arial">1. 
+					Create a native Console SmartDevice Project.<br>
+					2. Hit Ctrl F5.<br>
+					3. Select Tool \ Attach To Process.<br>
+					4. Select the Smart Device Transport &amp; your target device.<br>
+					5. Select Managed debugger in the Debug engine selection dialog.<br>
+					6. Select your native process &amp; attach.
+					<br>
+					7. You will observe no messages.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There is no known resolution.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.3&nbsp;&nbsp;&nbsp;Applying filter in break mode to an already 
+				existing breakpoint causes the breakpoint to be ignored.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--546838--><P class="MsoNormal"><FONT face="Arial"><br>
+					1) Create a Native application with the following code<br>
+					void foo(void)<br>
+					{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+					}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+					<br>
+					int _tmain(int argc, _TCHAR* argv[])<br>
+					{<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;int i = 0;<br>
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;foo();<br>
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;return 0;<br>
+					}<br>
+					2) Set a location breakpoint on "return 0;"<br>
+					3) Set a function breakpoint on foo() at design time.<br>
+					4) F10 to get the application into break mode.<br>
+					5) Open the breakpoint window and edit the filter property of function 
+					breakpoint (by including the filter ProcessName or ThreadName)<br>
+					6) Continue (F5)<br>
+					7) The function breakpoint is not hit and instead we break at "return 0" 
+					statement.<br>
+					<br>
+					The above scenario illustrates that modifying a design time breakpoint by 
+					editing the filter properties at break mode causes the breakpoint to be 
+					ignored.This is true for all kinds of breakpoints.<br>
+				</FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"><br>
+					Set the breakpoint and apply the filter at design time itself. This applies 
+					only to ProcessName, ThreadName filters as ThreadId and ProcessId are not known 
+					at design time.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.4&nbsp;&nbsp;&nbsp;In Native Debugging, F10/F11 translate into 
+				a step over the body of while loop and related constructs if the body of the 
+				loop construct spans on a single source line.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--546839--><P class="MsoNormal"><FONT face="Arial"><br>
+					F10/F11 do not work properly in scenarios illustrated by example below.<br>
+					<br>
+					Example Code Snippet<br>
+					<br>
+					1 int i = 0;
+					<br>
+					2 while (i &lt; 1000) { i++; }
+					<br>
+					3 return 0;<br>
+					<br>
+					Steps:<br>
+					-Press F9 on line 1 and then after the breakpoint is hit on this line press F10<br>
+					-Now the control is on line 2<br>
+					-Press F10 yet again<br>
+					<br>
+					The issue after performing the above steps is that the debugger would 
+					stop/break at line 3 and not at line 2. That is, the breakpoint on line 2 gets 
+					ignored for repeated F10.<br>
+					Please note that this happens for all loop constructs that span a single source 
+					line.<br>
+				</FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			</P>
+			<FONT face="Arial">
+				<P><br>
+					<br>
+					Place a breakpoint with F9 on the source line with the while loop (line 2). 
+					Then the debugger would break at each F10 on line 2 while stepping through the 
+					while loop (till i increments to 1000) .<br>
+					<br>
+					-or-</P>
+				<P>
+					If code can be edited, re-organize the above code as follows and everything 
+					would work as expected.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;1 int i = 0;
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;2 while (i &lt; 1000)
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;3 { i++; }
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;4 return 0;<br>
+				</P>
+			</FONT>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.5&nbsp;&nbsp;&nbsp;Native assert dialogs for Smart Device 
+				applications may render buttons off the screen&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--548280--><P class="MsoNormal"><FONT face="Arial">When an 
+					assert dialog is thrown by a Visual Studio 2005 C++ Smart Device application on 
+					a Pocket PC or Smartphone, the buttons on the dialog may render off the screen</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"> Use the scroll buttons/keys of the Pocket PC or Smartphone to 
+					manually scroll to the button.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.6&nbsp;&nbsp;&nbsp;"Copy if newer" Property semantics for 
+				Smart Device projects&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--549304-->
+			<P class="MsoNormal"><FONT face="Arial">In smart device projects, newness of a dll or 
+					exe file is determined by comparing the Win32 versions.<br>
+					- If the device-side version is less than that of the desktop, the file is 
+					copied.<br>
+					- If the device-side version is greater than that of the desktop, the file is 
+					not copied.<br>
+					- If the checksums are different, the file is copied.</FONT></P>
+			<P class="MsoNormal"><FONT face="Arial">
+					<br>
+					Newness of files other than dll and exe is based solely on checksum.<br>
+					Newness is not based on timestamp or size.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">There is no known resolution.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.7&nbsp;&nbsp;&nbsp;Visual Studio 2005 will connect to an 
+				ActiveSync device if there is an error connecting to a TCP/IP device. &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--549309--><P class="MsoNormal"><FONT face="Arial">When&nbsp;one 
+					device (e.g. PPC) is connected through ActiveSync and you want to connect to a 
+					WinCE device (e.g. CEPC) through TCP/IP,&nbsp;if the TCP/IP connection to WinCE 
+					device fails for some reason, Visual Studio 2005&nbsp;will connect to the 
+					device connected through ActiveSync.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Disconnect the device connected through ActiveSync before 
+					attempting TCP/IP connection to another device.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.8&nbsp;&nbsp;&nbsp;Deploying an MFC dll with automation 
+				support and dynamically linked to MFC library will fail with the error 
+				0x8007007e while registering.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--549316--><P class="MsoNormal"><FONT face="Arial">While 
+					deploying an MFC dll project with automation support and dynamically linked to 
+					MFC library, Visual Studio 2005 deploys the dll along with required dependent 
+					dlls to device under project folder. LoadLibrary() used for registering the dll 
+					looks for dependent libraries in the directory where conman components are 
+					located and then in \Windows directory. For this reason the dll registration 
+					fails.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Manually move or copy the required dependent dlls from the 
+					project folder to \Windows directory on the device.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.9&nbsp;&nbsp;&nbsp;Connectivity to Device Emulator unstable 
+				when using wireless networks that have DHCP servers configured with short lease 
+				times&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--549419--><P class="MsoNormal"><FONT face="Arial">On 
+					wireless networks, TCP/IP connectivity to the device emulator through Virtual 
+					Switch driver could be unstable. This is caused by the interaction of the DHCP 
+					server implementation, the Virtual Switch driver, and the 802.11 specification. </FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">For stable connectivity to device emulator one of the following 
+					transports could be used.<br>
+					1. DMA transport</FONT></P>
+			<P><FONT face="Arial"> -or-
+					<br>
+					2. TCP/IP transport over loopback adapter.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.10&nbsp;&nbsp;&nbsp;MUI: Localized remote tools fail to 
+				connect to device emulator when run under non-matching system locale&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--549919--><P class="MsoNormal"><FONT face="Arial">When a 
+					localized version (e.g. Japanese) of Visual Studio 2005 is installed on a 
+					English MUI OS, remote tools will fail to connect to the device emulator. This 
+					is because remote tools always use the system locale. For the same reason, when 
+					two different locales of Visual Studio 2005 (e.g. Japanese and English) are 
+					installed side-by-side on a English MUI OS, remote tools will always connect to 
+					the English device emulator.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Change the system locale to match the Visual Studio 2005 locale.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial"> 3.11&nbsp;&nbsp;&nbsp;Debugging experience sometimes is 
+				bad&nbsp;with default project settings for SmartDevice VC++ applications since 
+				/Os complier option is set.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550715--><P class="MsoNormal"><FONT face="Arial"><br>
+					The default project settings of SmartDevice VC++ Project has the compiler 
+					optimization option /Os set. /Os (Favor Small Code) minimizes the size of 
+					executable files and DLLs by instructing the compiler to favor size over speed. 
+					This could result in a&nbsp;bad debugging experience at times due to the code 
+					generated for this setting. For example, the debugger could enter both the if 
+					and else statements while stepping.<br>
+				</FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"><br>
+					Modify the compiler optimization setting "Favor Size or Speed property" from 
+					/Os option to Neither.
+					<br>
+					Steps<br>
+					1) Open the project's Property Page dialog box.<br>
+					2) Click the C/C++ folder.
+					<br>
+					3) Click the Optimization property page.
+					<br>
+					4) Modify the "Favor Size or Speed" property to Neither.<br>
+					<br>
+					This would achieve a better debugging experience. However the size of the 
+					executable would increase a little.
+					<br>
+				</FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.12&nbsp;&nbsp;&nbsp;Build Errors when Compiling a Compact 
+				Framework 1.0 Application that has a form marked for Localization.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550738--><P class="MsoNormal"><FONT face="Arial">If you 
+					are developing an application that requires to be localized and is targetting 
+					Version 1.0 of the Compact Framework, you will get an error about the missing 
+					SDK.<br>
+					<br>
+					Message:<br>
+					"Localization of projects targeting .NET Compact Framework 1.0 requires version 
+					1.1 of the .NET Framework SDK, which is not detected on this machine."<br>
+				</FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Version 1.1 of the .NET Framework SDK does not ship inside the 
+					Visual Studio 2005 product. It needs to be downloaded and installed.<br>
+					<br>
+					Use this page to download the SDK from.<br>
+					<A href="http://msdn.microsoft.com/netframework/downloads/updates/default.aspx">http://msdn.microsoft.com/netframework/downloads/updates/default.aspx</A>
+				</FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.13&nbsp;&nbsp;&nbsp;Drag-n-Drop of SqlCEResultSet DataSource 
+				does not generate code for the controls in the designer code file&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551097--><P class="MsoNormal"><FONT face="Arial">Drag-n-Drop 
+					a SqlCEResultSet DataSource from the DataSource window on a device windows 
+					forms designer does not generate the code for the controls in the designer code 
+					file (e.g. Form1.designer.cs).<br>
+					This will occur as follows:<br>
+					1. Control generation option set to DataGrid: Code for creating and 
+					initializing the DataGrid will not be generated in the designer code file.<br>
+					2. Control generation option set to Details: Code for creating and initializing 
+					the controls in the Details View will not be generated in the designer code 
+					file.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"> Any one of the following are sufficient:<br>
+					1. Before Drag-n-Drop: Edit any property of the form either from the Properties 
+					window or from the context menu on the design surface.<br>
+					E.g. Right-Click on design surface and turn off "Show Skin". Repeat to turn 
+					"Show Skin" back on.</FONT></P>
+			<P><FONT face="Arial"> -or-<br>
+					2. Before Drag-n-Drop: Add any control to the form from the Toolbox.</FONT></P>
+			<P><FONT face="Arial"> -or-<br>
+					3. After Drag-n-Drop: Edit any property of the form either from the Properties 
+					window or from the context menu on the design surface.</FONT></P>
+			<P><FONT face="Arial"> -or-<br>
+					4. After Drag-n-Drop: Add any control to the form from the Toolbox.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.14&nbsp;&nbsp;&nbsp;Deploying an MFC ActiveX control which is 
+				dynamically linked to MFC library will fail with the error 0x8007007e while 
+				registering.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551111--><P class="MsoNormal"><FONT face="Arial">LoadLibrary() 
+					API used for registering the ActiveX control looks for dependent libraries in 
+					the directory where conman components are located and then in \Windows 
+					directory. For this reason the ActiveX control registration fails.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Copy the required MFC dlls to \Windows directory on the device. 
+					For example, if Visual Studio 2005&nbsp;is installed on C: drive, MFC dlls for 
+					armv4 processor could be found under C:\Program Files\Microsoft Visual Studio 
+					8\VC\ce\Dll\armv4.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial"> 3.15&nbsp;&nbsp;&nbsp;One or more static text controls in a 
+				device project does not appear&nbsp;at run time.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551170--><P class="MsoNormal"><FONT face="Arial"> When 
+					dialog based MFC applications are executed on smart devices, one of the static 
+					text controls does not appear at run time on the device. The reason might be 
+					one of the following.<br>
+					<br>
+					1. Use of wizard generated code for creating a MFC based dialog application for 
+					smart devices and the dialog contains more than one static text control&nbsp; 
+					added by the developer.<br>
+					-or-
+					<br>
+					2. The custom developed code for VC++ application targetting smart devices 
+					contains support for "Resolution Aware"ness.<br>
+				</FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"><br>
+					When&nbsp;wizard generated code for a dialog based MFC application targeting 
+					smart devices is used, by default the wizard generates code for a "Resolution 
+					Aware" application. The resolution aware application uses the DRA(Device 
+					Resolution Aware) APIs. The generated code calls the API DRA::RelayoutDialog() 
+					in order to support the landscape and portraite modes.<br>
+					<br>
+					The API DRA::RelayoutDilog() requires that each of the static text controls 
+					must have unique IDs. However by default when the developer adds static text 
+					controls by drag and drop on the form, all the IDs for static text controls are 
+					generated as IDC_STATIC.<br>
+					<br>
+					To get all the controls displayed at run time, modify the IDs for these static 
+					text controls as IDC_STATIC_1, IDC_STATIC_2, IDC_STATIC_3,..and so on, making 
+					them unique IDs. This will ensure that all the static text controls appear at 
+					run time for the "Resolution Aware" applications.<br>
+					<br>
+					In order to change the ID of a static text control,<br>
+					<br>
+					1. Select the control on the form.<br>
+					2. right click and select properties.<br>
+					3. Select the "ID" Property.
+					<br>
+					4. Change IDC_STATIC to a unique identifier as for example 
+					IDC_STATIC_2,IDC_STATIC_3 and so on for every static text control.<br>
+					<br>
+					For a complete description of DRA::RelayoutDialog() refer to<br>
+					<a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnppcgen/html/screen_orientation_awareness.asp">
+						<br>
+						http://msdn.microsoft.com/library/default.asp?url=/library/en-us/dnppcgen/html/screen_orientation_awareness.asp</a></FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.16&nbsp;&nbsp;&nbsp;Smart device Winsock server running on a 
+				device receives OnConnect callback notification.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551172--><P class="MsoNormal"><FONT face="Arial">The 
+					smartdevice socket server implementation has a OnConnect() and OnAccept() 
+					method implemented using CSocket or CAsyncSocket targeting WinCE. When a client 
+					establishes a connection to this server hosted in the device, the server 
+					receives both OnAccept() and OnConnect() notifications.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">In order to avoid receiving the OnConnect() notification in the 
+					server do the following<br>
+					<br>
+					Before the call to Accept() on the server socket<br>
+					<br>
+					1. Call AsyncSelect method using the events that the server socket is 
+					subscribed to. That is if "socket" is the object for the server socket then<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;socket.AsyncSelect(FD_READ | FD_WRITE | FD_OOB | 
+					FD_ACCEPT | FD_CLOSE);<br>
+					Note that all the events are used other than the FD_CONNECT to explicitely mask 
+					the Connect event in the sever.<br>
+					<br>
+					2. If there is a need for the server socket to mask other events then, use the 
+					list of specific events that the server socket is interested in, for example if 
+					the server socket intended not to receive events for read operation then remove 
+					FD_READ also from the list of events in the call to AsynchSelect method 
+					as&nbsp; </FONT>
+			</P>
+			<FONT face="Arial">
+				<P>
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;socket.AsyncSelect(FD_WRITE | FD_OOB | FD_ACCEPT | 
+					FD_CLOSE);<br>
+				</P>
+				<P>
+					masking FD_CONNECT and FD_READ events.<br>
+					<br>
+					Please refer to
+					<br>
+					<a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vclib/html/_mfc_casyncsocket.3a3a.asyncselect.asp">
+						http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vclib/html/_mfc_casyncsocket.3a3a.asyncselect.asp</a><br>
+					for a complete description of ASyncSelect method behavior.<br>
+				</P>
+			</FONT>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial"> 3.17&nbsp;&nbsp;&nbsp;eVC4Project can not be opened in Visual 
+				Studio 2005 by double-clicking on .vcw file.&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551173--><P class="MsoNormal"><FONT face="Arial">The 
+					developer has a device project created using eVC4.&nbsp; After the installation 
+					of Visual Studio 2005 he is trying to open the eVC4 project in Visual Studio 
+					2005 by double clicking on the eVC4 workspace file "project.vcw".</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">The standard eVC4 projects are not registered as Visual Studio 
+					2005 projects.&nbsp; In order to convert these eVC4 projects into Visual Studio 
+					2005 compatible solution files do the following:<br>
+					<br>
+					1. Open Visual Studio 2005.<br>
+					2. From the File | Open , click on Project/Solution.<br>
+					3. In the Open Project dialog box, navigate to the vcw file, select the file, 
+					and click open.<br>
+					4. Select "Yes" for convert and open this project question.<br>
+				</FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.18&nbsp;&nbsp;&nbsp;Marshalling Structures on devices returns 
+				"NotSupportedException" if Structure contains reference types. &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--550986--><P class="MsoNormal"><FONT face="Arial"><br>
+					In a Devices project, the SizeOf statement in the code below will throw a 
+					NotSupportedException:<br>
+					<br>
+					Imports System.Runtime.InteropServices.MarShal<br>
+					Module Module1<br>
+					Structure S1<br>
+					Public RefType As String<br>
+					End Structure<br>
+					Sub Main()<br>
+					Dim sz As Integer<br>
+					Dim struct As New S1<br>
+					struct.RefType = "strings are reference types"<br>
+					sz = SizeOf(struct)<br>
+					End Sub<br>
+					End Module<br>
+				</FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Apply an attribute to the reference type so it's marshalled 
+					correctly. Here's an example:<br>
+					&lt;MarshalAs(UnmanagedType.ByValTStr, SizeConst:=3)&gt; Public x As String<br>
+					<br>
+					For more information, please read the documentation on the 
+					'MarshalAsAttribute'.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.19&nbsp;&nbsp;&nbsp;'Save As' does not display the path 
+				selection dialog box on x86 or SH4 platforms.<br>
+				&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551191--><P class="MsoNormal"><FONT face="Arial"> When we 
+					click the wizard generated 'Save As' option from the application menu ( File 
+					&gt; Save As ) in a native MFC project, the 'Save As' dialog box does not 
+					appear.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"> Use the 'GetSaveFileName' function in the common dialog box 
+					library.<br>
+					For example to create a filename for a CWinApp derived class, you must:<br>
+				</FONT>
+			</P>
+			<P><FONT face="Arial"> Create a message map entry and register your handler for 
+					ID_FILE_SAVE_AS command.
+					<br>
+					This can be done in the following manner:<br>
+					- Using IDE:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;1. Right Click on the 'Save As' menu item. Select 'Add 
+					Event Handler' option.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;2. Fill in the name, description of the handler. Select 
+					the class with which to associate the handler.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;3. Now select 'Add and Edit' option to create the 
+					appropriate entries. The code that needs to be written<br>
+					&nbsp;&nbsp;&nbsp;&nbsp; in the handler has been discussed below.<br>
+					<br>
+					- Editing the source files.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;1. Add a entry of type ON_COMMAND(ID_FILE_SAVE_AS, 
+					your_handler) between BEGIN_MESSAGE_MAP and END_MESSAGE_MAP macros.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;2. Add the handler as 'afx_msg void your_handler();' in 
+					the header file for the appropriate class.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;3. Implement this function as a member function to this 
+					class in the source using the ideas given below.<br>
+					<br>
+					- The code for the handler should do the following things, in order:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;1. Declare a OPENFILENAME structure and initialize the 
+					appropriate fields( See the documentation on OPENFILENAME.)<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;2. Call the GetSaveFileName function with this a 
+					reference to this structure.
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp; This throws up the filename selection dialog.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;3. The 'lpstrFile' field of the structure contains the 
+					filename that was selcted using the path selection dialog box.
+					<br>
+					<br>
+					- The handler can use this selected name for further use.<br>
+			</P>
+			</FONT>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.20&nbsp;&nbsp;&nbsp;In native debugging, F11 does not work for 
+				class constructors on x86 &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551159--><P class="MsoNormal"><FONT face="Arial"><br>
+					Stepping into a constructor call in native debugging does not work when 
+					targeting a CEPC x86 device.
+					<br>
+					<br>
+					Example:<br>
+					class Foo<br>
+					{<br>
+					private:<br>
+					int i;<br>
+					public:<br>
+					Foo()
+					<br>
+					{<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;i = 0;
+					<br>
+					}&nbsp;&nbsp;&nbsp;&nbsp;<br>
+					};<br>
+					<br>
+					int _tmain(int argc, _TCHAR* argv[])
+					<br>
+					{
+					<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;Foo *f = new Foo(); // F11 on this statment should step 
+					into the constructor but instead a "No source available. Show Disassembly?" 
+					window pops up.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;return 0;
+					<br>
+					}<br>
+					<br>
+					Please note that this issue is applicable only to x86 architectures.<br>
+				</FONT>
+			</P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial"><br>
+					Set a breakpoint directly in the constructor and then press F5.&nbsp; The code 
+					in the constructor needs to be debugged on x86 device.<br>
+				</FONT>
+			</P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial"> 3.21&nbsp;&nbsp;&nbsp;Incorrect message while deploying a CAB 
+				file to a device or emulator that has missing wceload.exe&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--549422--><P class="MsoNormal"><FONT face="Arial">Wceload.exe 
+					performs installation tasks for .cab files on Pocket PC and Smartphone.
+					<br>
+					Deployment of a .cab file to a device or emulator with missing wceload.exe will 
+					fail with the message, "The system cannot find the file specified".</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Manually copy the matching wceload.exe to device under \Windows 
+					directory.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">3.22&nbsp;&nbsp;&nbsp;Intermittent connectivity loss while 
+				deploying or debugging an application on device emulator using TCP transport 
+				over Virtual Switch driver. &nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--549424--><P class="MsoNormal"><FONT face="Arial">This 
+					happens due to an issue with Virtual Switch driver.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">For stable connectivity to the device emulator use DMA transport.</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H1><FONT face="Arial" size="5"><A name="systemrequirements"></A>4. Source Code Control 
+				Integration </FONT>
+		</H1>
+		<H3><FONT face="Arial">4.1&nbsp;&nbsp;&nbsp;Renaming a folder under FrontPage Source 
+				Code Control causes files underneath to become uncontrolled&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551443--><P class="MsoNormal"><FONT face="Arial">If you 
+					are working on a remote web site that uses FrontPage versioning control and you 
+					rename a folder with source controlled items inside, all items in that folder 
+					will appear uncontrolled until you close and re-open your web site.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">Close and re-open your web site after renaming the folder</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H3><FONT face="Arial">4.2&nbsp;&nbsp;&nbsp;If you open a solution from source control 
+				that contains a multi-level IIS web, you might need to add read permissions for 
+				IIS to the parent folders in the web in order to debug&nbsp;</FONT></H3>
+		<DIV class="indent" id="DIV1"><!--551444--><P class="MsoNormal"><FONT face="Arial">When you 
+					open a solution from source control that contains IIS web sites, VS only grants 
+					IIS read access to the target path of your URL. However, in order to debug IIS 
+					web sites, IIS needs read access to each folder in the virtual path of the URL. 
+					So if you open a solution that contains a web site with more than one level 
+					(e.g. http://localhost/MyWebs/Web1), you might need to grant read access to IIS 
+					on whatever folder your parent web (e.g. http://localhost/MyWebs) points to in 
+					order to debug the web site.</FONT></P>
+			<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+			<P><FONT face="Arial">In Windows Explorer, add "Read" permissions for the ASP.NET user 
+					account to the parent folders in your URL. And if you are using Windows Server 
+					2003, the NETWORK SERVICE account also requires read permissions to the folder. 
+					For example, if you open a solution from source control containing 
+					"http://localhost/MyWebs/Web1", navigate in Windows Explorer to the directory 
+					that "http://localhost/MyWebs" points to and add permissions to this folder. 
+					Or, you can choose to open your solution to a different location on your 
+					computer where the Users group has read access (By default, the My Documents 
+					directory and its subfolders&nbsp;do not grant read access to the Users group).</FONT></P>
+			<P>&nbsp;</P>
+		</DIV>
+		<H1><FONT face="Arial" size="5"><A name="systemrequirements"></A>5. Crystal Reports</FONT></H1>
+		<DIV class="indent" id="DIV1"><p><font face="Arial">For additional information concerning 
+					Crystal Reports for Visual Studio 2005, please visit us at: <a href="http://www.businessobjects.com/products/reporting/crystalreports/net/vsnet.asp">
+						http://www.businessobjects.com/products/reporting/crystalreports/net/vsnet.asp</a></font></p>
+			<P><FONT face="Arial"></FONT>&nbsp;</P>
+			<H1><FONT face="Arial" size="5">6. Microsoft Visual Studio 2005 Tools for the Microsoft 
+					Office System</FONT></H1>
+			<H3><FONT face="Arial">6.1&nbsp;&nbsp;&nbsp;Visual Studio Tools for Office does not 
+					support multipart XML schemas&nbsp;</FONT></H3>
+			<DIV class="indent" id="DIV1"><!--545762-->
+				<P class="MsoNormal"><FONT face="Arial">Visual Studio Tools for Office only supports 
+						XmlMaps that are based on a single primary schema, even though Microsoft Office 
+						Excel supports XmlMaps that can be composed of a primary schema and optional 
+						supporting schema.</FONT></P>
+				<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+				<P><FONT face="Arial">There is no known resolution.</FONT></P>
+				<P>&nbsp;</P>
+			</DIV>
+			<H3><FONT face="Arial">6.2&nbsp;&nbsp;&nbsp;WordDynamicControls sample does not load 
+					controls when reopened&nbsp;</FONT></H3>
+			<DIV class="indent" id="DIV1"><!--545791-->
+				<P class="MsoNormal"><FONT face="Arial">When using the WordDynamicControls sample, 
+						adding controls and then closing and reopening the document will sometimes 
+						result in the added controls not being saved. </FONT>
+				</P>
+				<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+				<P><FONT face="Arial">There is no known resolution.</FONT></P>
+				<P>&nbsp;</P>
+			</DIV>
+			<H3><FONT face="Arial">6.3&nbsp;&nbsp;&nbsp;Both VBA and XLM (Excel 4.0 Macro) code 
+					runs when a workbook opens in the designer &nbsp;</FONT></H3>
+			<DIV class="indent" id="DIV1"><!--550078-->
+				<P class="MsoNormal"><FONT face="Arial">If you have Visual Basic for Applications (VBA) 
+						or Excel 4.0 Macro (XLM) code in your workbook event handlers, the code will be 
+						executed while the workbook is open in the designer.</FONT></P>
+				<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+				<P><FONT face="Arial">To ensure that no VBA or XLM code runs while you customize your 
+						workbook using Visual Studio Tools for Office, you should remove any VBA or XLM 
+						code associated with your workbook before creating a project based on your 
+						workbook.</FONT></P>
+				<P>&nbsp;</P>
+			</DIV>
+			<H3><FONT face="Arial">6.4&nbsp;&nbsp;&nbsp;Installing Visual Studio Team System on a 
+					computer with only Microsoft Office XP installed causes security dialogs to be 
+					displayed when Word or Excel is started&nbsp;</FONT></H3>
+			<DIV class="indent" id="DIV1"><!--550080-->
+				<P class="MsoNormal"><FONT face="Arial">When you start Word or Excel after installing 
+						Visual Studio Team System on a computer with only Office XP installed, the 
+						following Office security dialog will be displayed:<BR>
+						<BR>
+						VSTOWordAdaptor.dll [or VSTOExcelAdaptor.dll]<BR>
+						contains macros by
+						<BR>
+						Microsoft Corporation<BR>
+						<BR>
+						Macros may contain viruses. It is always safe to disable macros, but if the 
+						macros are legitimate, you might lose some functionality.<BR>
+						<BR>
+						The security level is set to High. Therefore, you cannot enable macros from 
+						sources that you do not trust.<BR>
+						[] Always trust macros from this source.<BR>
+						<BR>
+						[Disable Macros] [Enable Macros] [More Info]<BR>
+						<BR>
+						This warning is shown because the Microsoft signature used to sign 
+						VSTOWordAdaptor.dll and VSTOExcelAdaptor.dll is not on the list of trusted 
+						signatures in Office XP. The Microsoft signature is on the list of trusted 
+						signatures in Office 2003. </FONT>
+				</P>
+				<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+				<P><FONT face="Arial">Trust macros from Microsoft Corporation. If you plan to use 
+						Visual Studio 2005 Tools for Office you must install a supported version of 
+						Office 2003. Installing Office 2003 will add this Microsoft signature to the 
+						list of trusted signatures.</FONT></P>
+				<P>&nbsp;</P>
+			</DIV>
+			<H3><FONT face="Arial">6.5&nbsp;&nbsp;&nbsp;Removing a table from a dataset when there 
+					are bindings to it can cause components from the component tray to be removed 
+					when you debug the application&nbsp;</FONT></H3>
+			<DIV class="indent" id="DIV1"><!--550082-->
+				<P class="MsoNormal"><FONT face="Arial">This issue occurs when you remove a data-bound 
+						host control, such as a list object, from the design surface and then remove 
+						the table it was bound to from the data source using either the edit feature or 
+						the Data Source Configuration Wizard. If you then add a new host control and 
+						debug the application, an exception might be generated. When you stop 
+						debugging, the design surface is unloaded and data components are removed from 
+						the component tray.</FONT></P>
+				<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+				<P><FONT face="Arial">If you remove a host control from the design surface and then 
+						remove the table it was bound to from the data source, you must manually remove 
+						the table’s binding source before building the application.</FONT></P>
+				<P>&nbsp;</P>
+			</DIV>
+			<H3><FONT face="Arial">6.6&nbsp;&nbsp;&nbsp;Windows Forms control extender properties 
+					do not appear for English Excel if the Windows user locale is set to a language 
+					other than English&nbsp;</FONT></H3>
+			<DIV class="indent" id="DIV1"><!--550084-->
+				<P class="MsoNormal"><FONT face="Arial">This issue affects the English version of Excel 
+						if the Windows user locale is changed to a language other than English. Certain 
+						properties, such as height and width, are not available for Windows Forms 
+						controls hosted on the Excel design surface.</FONT></P>
+				<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+				<P><FONT face="Arial">Install an Office Multilingual User Interface (MUI) pack onto the 
+						system. It is not necessary to change the Excel user interface language.</FONT></P>
+				<P>&nbsp;</P>
+			</DIV>
+			<H3><FONT face="Arial">6.7&nbsp;&nbsp;&nbsp;Word does not load Visual Studio Tools for 
+					Office customizations when the document is opened through HTTP and "Browse in 
+					same window" is not selected in Windows Explorer&nbsp;</FONT></H3>
+			<DIV class="indent" id="DIV1"><!--550111-->
+				<P class="MsoNormal"><FONT face="Arial">The “Browse in same window” property is used by 
+						Internet Explorer to determine whether the document is hosted inside the 
+						browser or in a separate window. If the document is hosted in a separate 
+						window, the customizations do not load and run.</FONT></P>
+				<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+				<P><FONT face="Arial">Select "Browse in same window" in Windows Explorer.<BR>
+						To locate the "Browse in same window" property:<BR>
+						1) Open Windows Explorer.<BR>
+						2) Click the Tools menu.<BR>
+						3) Click Folder Options.<BR>
+						4) Click the File Types tab.<BR>
+						5) Select DOC in the list of registered file types.<BR>
+						6) Click Advanced.</FONT></P>
+				<P>&nbsp;</P>
+			</DIV>
+			<H3><FONT face="Arial">6.8&nbsp;&nbsp;&nbsp;Source code control does not check out 
+					required related files when a Visual Studio Tools for Office document is 
+					checked out&nbsp;</FONT></H3>
+			<DIV class="indent" id="DIV1"><!--550086-->
+				<P class="MsoNormal"><FONT face="Arial">When you check a Visual Studio Tools for Office 
+						document out of source code control, not all of the required files are 
+						automatically checked out. This is because generated code is stored in files 
+						that are separate from the user interface (UI) control and data component 
+						properties of the document.
+						<BR>
+						<BR>
+						Changes that were indirectly made to the dependent files will be lost when the 
+						document is checked in, because the dependent files were never checked out and 
+						so could not be updated.<BR>
+						<BR>
+						If only the document is checked out and there is a newer version of the related 
+						files on the server, you will not see the latest properties. The properties in 
+						the related files on the server will be overwritten if the related files are 
+						checked in with the document.</FONT></P>
+				<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+				<P><FONT face="Arial">Before modifying a checked-in document, make sure to check out 
+						all of the related files. When checking in the document, remember to check in 
+						all the related files. These files are visible in Solution Explorer, indented 
+						beneath the document, when "Show All Files" is selected.</FONT></P>
+				<P>&nbsp;</P>
+			</DIV>
+			<H3><FONT face="Arial">6.9&nbsp;&nbsp;&nbsp;Word templates open in Normal view, not 
+					Print Layout view, so non-inline controls are not displayed&nbsp;</FONT></H3>
+			<DIV class="indent" id="DIV1"><!--550087-->
+				<P class="MsoNormal"><FONT face="Arial">Objects in Word that are not inline with text 
+						are visible only in Print Layout view. By default UI controls added to a Visual 
+						Studio Tools for Office document are inline with text. The layout type can be 
+						changed by right-clicking the control, clicking “Format Control…” and then 
+						clicking “Layout”.<BR>
+						<BR>
+						By default, Visual Studio Tools for Office opens Word Templates in Normal view 
+						so non-inline controls do not appear.</FONT></P>
+				<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+				<P><FONT face="Arial">Switch from Normal view to Print Layout view to display the 
+						controls.</FONT></P>
+				<P>&nbsp;</P>
+			</DIV>
+			<H3><FONT face="Arial">6.10&nbsp;&nbsp;&nbsp;Deleting a control from an inactive Excel 
+					sheet at design time might leave auto-generated code behind&nbsp;</FONT></H3>
+			<DIV class="indent" id="DIV1"><!--550088-->
+				<P class="MsoNormal"><FONT face="Arial">Each worksheet has its own design surface that 
+						is loaded on demand. When changes are made to the worksheet, for example, 
+						controls are added, deleted, or changed, the design surface detects those 
+						changes and updates the generated code.<BR>
+						If, at design time, controls are deleted from an inactive sheet, the generated 
+						code can only be partially updated because the design surface has not been 
+						instantiated. There are at least two ways this could happen. First, the “Manage 
+						Named Ranges” dialog is used to a delete a NamedRange control from an inactive 
+						sheet. Second, the Excel document is opened outside Visual Studio, controls are 
+						then removed, and then the document is re-opened inside Visual Studio.</FONT></P>
+				<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+				<P><FONT face="Arial">Activate the worksheet before using the “Manage Named Ranges” 
+						dialog to delete a NamedRange control.<BR>
+						To repair build errors, make each affected sheet dirty by editing a property, 
+						adding a control to the surface, or deleting a control from the surface. Then 
+						rebuild the project.</FONT></P>
+				<P>&nbsp;</P>
+			</DIV>
+			<H3><FONT face="Arial">6.11&nbsp;&nbsp;&nbsp;Visual Studio Tools for Office does not 
+					natively support 64-bit applications&nbsp;</FONT></H3>
+			<DIV class="indent" id="DIV1"><!--550089-->
+				<P class="MsoNormal"><FONT face="Arial">By default Visual Studio Tools for Office and 
+						other project types generate to “Any CPU” type. However, Visual Studio Tools 
+						for Office solutions only work in a 32-bit environment. </FONT>
+				</P>
+				<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+				<P><FONT face="Arial">To run Visual Studio Tools for Office solutions on a 64-bit 
+						computer you must change the platform target in the project properties from 
+						“Any CPU” to x86, even if you will deploy the application on a 64-bit Windows 
+						operating system. You must also make this change to other types of 
+						applications, for example console or Windows Forms applications, that use the 
+						ServerDocument class.</FONT></P>
+				<P>&nbsp;</P>
+			</DIV>
+			<H3><FONT face="Arial">6.12&nbsp;&nbsp;&nbsp;Visual Studio Team System unit testing is 
+					not supported in Visual Studio Tools for Office projects&nbsp;</FONT></H3>
+			<DIV class="indent" id="DIV1"><!--552063-->
+				<P class="MsoNormal"><FONT face="Arial">The unit testing feature, found in the Visual 
+						Studio Team System products, is not supported in Visual Studio Tools for 
+						Office.</FONT></P>
+				<P class="labelproc"><FONT face="Arial"><B>To resolve this issue</B> </FONT>
+				<P><FONT face="Arial">There is no known resolution.</FONT></P>
+				<P><FONT face="Arial"></FONT>&nbsp;</P>
+			</DIV>
+		</DIV>
+	</BODY>
+</HTML>
